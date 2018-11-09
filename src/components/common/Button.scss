@@ -1,0 +1,26 @@
+@import "../../styles/Colors";
+
+.button {
+  &:hover {
+    opacity: 0.9;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+
+  margin: 5px;
+  padding: 10px 30px;
+
+  outline: none;
+  border: none;
+  border-radius: 5px;
+
+  background-color: $primaryButtonBg;
+
+  .text {
+    font-weight: 600;
+    font-size: 12pt;
+
+    color: $primaryButtonTxt;
+  }
+}
