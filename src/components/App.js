@@ -1,19 +1,31 @@
 import React, {Component} from 'react';
+import {connect, Provider} from "react-redux";
+
+import i18n from '../i18n';
+import {Store} from "../store";
+import * as AppActions from "../store/actions";
+
+import './App.scss';
 
 import {Button} from './common';
-import './App.scss';
 
 class App extends Component {
     render() {
         return (
-            <div className="App">
-                <Button
-                    text="Click ME!"
-                    onClick={() => alert('Gotcha!')}
-                />
-            </div>
+            <Provider store={Store}>
+                <div className="App">
+                    <Button
+                        text={i18n.t('click_me')}
+                        onClick={() => this.props.showAlert('Gotcha!')}
+                    />
+                </div>
+            </Provider>
         );
     }
 }
 
-export default App;
+const AppContainer = connect(() => ({}), {
+    showAlert: AppActions.showAlert
+})(App);
+
+export {AppContainer as App};
