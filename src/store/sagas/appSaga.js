@@ -1,4 +1,5 @@
-import {fork, takeLatest, call} from 'redux-saga/effects';
+import {call, fork, takeLatest} from 'redux-saga/effects';
+
 import * as Types from "../types";
 
 function* clickHandler({message}) {

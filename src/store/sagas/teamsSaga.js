@@ -1,7 +1,7 @@
-import {fork, takeLatest, call, put} from 'redux-saga/effects';
+import {call, fork, put, takeLatest} from 'redux-saga/effects';
 
-import * as Types from "../types";
 import {teamsService} from "../../domain";
+import * as Types from "../types";
 import * as TeamsActions from "../actions/teamsActions";
 
 function* retrieveTeamsList() {

@@ -1,13 +1,7 @@
 import axios from 'axios';
 
-import {
-    AuthGateway,
-    TeamsGateway
-} from "./gateways";
-import {
-    AuthService,
-    TeamsService
-} from "./services";
+import {AuthGateway, TeamsGateway} from "./gateways";
+import {AuthService, TeamsService} from "./services";
 
 const restAdapter = axios.create({
     baseURL: 'http://beanstalk-staging.seqpubr7vy.eu-central-1.elasticbeanstalk.com/api'

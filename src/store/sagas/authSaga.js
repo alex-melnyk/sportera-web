@@ -1,14 +1,35 @@
-import {fork, takeLatest, call, put} from 'redux-saga/effects';
+import {call, fork, put, takeLatest} from 'redux-saga/effects';
+import {REHYDRATE} from 'redux-persist';
 
-import * as Types from "../types";
 import {applyAccessToken, authService} from "../../domain";
+import * as Types from "../types";
 import * as AuthActions from "../actions/authActions";
+
+function* restoreState({payload}) {
+    try {
+        const {
+            auth: {
+                accessToken
+            }
+        } = payload;
+
+        if (accessToken) {
+            yield setAccessToken({accessToken});
+        }
+    } catch (e) {
+        console.warn(e);
+    }
+}
+
+function* setAccessToken({accessToken}) {
+    yield call(() => applyAccessToken(accessToken));
+}
 
 function* signInWithEmailAndPassword({email, password}) {
     try {
         const data = yield call(() => authService.signIn({email, password}));
 
-        yield call(() => applyAccessToken(data.token));
+        yield put(AuthActions.applyAccessToken({accessToken: data.token}));
 
         yield put(AuthActions.signInWithEmailAndPasswordSuccess({data}));
     } catch (error) {
@@ -18,6 +39,9 @@ function* signInWithEmailAndPassword({email, password}) {
 
 function* authListener() {
     yield takeLatest(Types.AUTH_SIGN_IN_REQUEST, signInWithEmailAndPassword);
+    yield takeLatest(Types.AUTH_APPLY_ACCESS_TOKEN, setAccessToken);
+
+    yield takeLatest(REHYDRATE, restoreState);
 }
 
 export default function* authSaga() {

@@ -1,11 +1,18 @@
-import { createStore, applyMiddleware } from 'redux';
+import {applyMiddleware, createStore} from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import {persistReducer, persistStore} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 import Reducers from './reducers';
 import Middleware from './middleware';
 import Sagas from './sagas';
 
-// create the saga middleware
+const persistedReducer = persistReducer({
+    key: 'root',
+    storage,
+    whitelist: ['auth']
+}, Reducers);
+
 const sagaMiddleware = createSagaMiddleware();
 
 const listOfMiddleware = [
@@ -13,13 +20,16 @@ const listOfMiddleware = [
     sagaMiddleware
 ];
 
-// mount it on the Store
 const Store = createStore(
-    Reducers,
+    persistedReducer,
     applyMiddleware(...listOfMiddleware)
 );
 
-// then run the saga
+const Persistor = persistStore(Store);
+
 sagaMiddleware.run(Sagas);
 
-export {Store};
+export {
+    Persistor,
+    Store
+};
