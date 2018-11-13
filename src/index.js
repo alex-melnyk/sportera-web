@@ -1,16 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from "react-redux";
+import {Route} from "react-router-dom";
+import {ConnectedRouter} from "connected-react-router";
 
-import {Store} from "./store";
-import {App} from './components';
+import {History, Store} from "./store";
 import {unregister} from './serviceWorker';
+
+import {Routes} from "./navigation";
+import {App, LoginScreen, SecurityInterlayer} from "./components";
 
 global.__DEV__ = process.env.NODE_ENV === 'development';
 
 const Root = () => (
     <Provider store={Store}>
-        <App/>
+        <ConnectedRouter history={History}>
+            <div className="App">
+                <Route
+                    path={Routes.LOGIN}
+                    component={LoginScreen}
+                />
+                <SecurityInterlayer
+                    exact
+                    path="/"
+                    component={App}
+                />
+            </div>
+        </ConnectedRouter>
     </Provider>
 );
 

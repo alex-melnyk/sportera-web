@@ -1,5 +1,6 @@
-import {call, fork, put, takeLatest} from 'redux-saga/effects';
+import {call, fork, put, takeLatest, select} from 'redux-saga/effects';
 import {REHYDRATE} from 'redux-persist';
+import { push } from 'connected-react-router';
 
 import {applyAccessToken, authService} from "../../domain";
 import * as Types from "../types";
@@ -13,8 +14,12 @@ function* restoreState({payload}) {
             }
         } = payload;
 
+        console.log(!!accessToken, accessToken)
+
         if (accessToken) {
             yield setAccessToken({accessToken});
+
+            yield put(push('/'));
         }
     } catch (e) {
         console.warn(e);
