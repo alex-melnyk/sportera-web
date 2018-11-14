@@ -1,0 +1,66 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  deploy:
+    docker:
+    - image: circleci/ruby:2.5-node-browsers
+    working_directory: ~/frontend
+    steps:
+    - checkout
+    - restore_cache:
+        keys:
+        - v2-yarn-dependencies-{{ checksum "yarn.lock" }}
+        - v2-yarn-dependencies-
+    - run:
+        name: Yarn Install
+        command: cd frontend && yarn install --cache-folder ~/.cache/yarn
+    - save_cache:
+        key: v2-yarn-dependencies-{{ checksum "yarn.lock" }}
+        paths:
+        - ~/.cache/yarn
+    - run:
+        name: 'Checkout backend repo, staging branch'
+        command: |
+          mkdir ~/backend
+          cd ~/backend
+          git clone git@bitbucket.org:robobee/sports-engine.git .
+          git checkout staging
+    - run:
+        name: Deploy to aws
+        command: |
+          sudo apt-get -y install python-pip
+          pip install awsebcli --upgrade --user
+          export PATH="$HOME/.local/bin:$PATH"
+          mkdir ~/.aws
+          touch ~/.aws/config
+          chmod 600 ~/.aws/config
+          echo "[profile eb-cli]" > ~/.aws/config
+          echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
+          echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
+          cd ~/frontend
+          yarn build
+          cd ~/backend
+          rm public/asset-manifest.json
+          rm public/favicon.ico
+          rm public/index.html
+          rm public/manifest.json
+          rm public/service-worker.js
+          rm -r public/static
+          cp -a ~/frontend/build/* public
+          git config --global user.email "deployer@example.com"
+          git config --global user.name "Deploy User"
+          git add .
+          eb use beanstalk-staging
+          eb deploy -v --staged
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+    - deploy:
+        filters:
+          branches:
+            only: [staging]
