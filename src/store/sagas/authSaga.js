@@ -1,4 +1,4 @@
-import {call, fork, put, takeLatest, select} from 'redux-saga/effects';
+import {call, fork, put, takeLatest} from 'redux-saga/effects';
 import {REHYDRATE} from 'redux-persist';
 import { push } from 'connected-react-router';
 
