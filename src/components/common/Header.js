@@ -6,36 +6,36 @@ const Header = () => (
     <header
         className="header"
     >
-    	<div class="d-flex">
-	    	<div class="header-left">
-		    	<a href="#" class="nav-toggler">
-		    		<span class="icon"> icon</span>
+    	<div className="d-flex">
+	    	<div className="header-left">
+		    	<a href="#" className="nav-toggler">
+		    		<span className="icon"> icon</span>
 		    	</a>	
-		    	<a href="#" class="logo">
+		    	<a href="#" className="logo">
 		    		<img src="../../assets/img/tpl/logo.svg" alt="" width="50" />
 		    	</a>
 		    </div>	
 
-	    	<div class="header-right">
-	    		<ul class="header-nav">
+	    	<div className="header-right">
+	    		<ul className="header-nav">
 	    			<li>
-	    				<div class="dropdown-nav">
-	    					<a class="dropdown-toggle" href="#">
-	    						<span class="arrow"><i class="icon-calendar"></i></span>
+	    				<div className="dropdown-nav">
+	    					<a className="dropdown-toggle" href="#">
+	    						<span className="arrow"><i className="icon-calendar"></i></span>
 
-								<i class="icon-chat"></i>
-								<i class="icon-club"></i>
-								<i class="icon-command"></i>
-								<i class="icon-crm"></i>
-								<i class="icon-dashboard"></i>
-								<i class="icon-docs"></i>
-								<i class="icon-payment"></i>
-								<i class="icon-settings"></i>
-								<i class="icon-toggler"></i>
-								<i class="icon-tourney"></i>
-								<i class="icon-user"></i>
+								<i className="icon-chat"></i>
+								<i className="icon-club"></i>
+								<i className="icon-command"></i>
+								<i className="icon-crm"></i>
+								<i className="icon-dashboard"></i>
+								<i className="icon-docs"></i>
+								<i className="icon-payment"></i>
+								<i className="icon-settings"></i>
+								<i className="icon-toggler"></i>
+								<i className="icon-tourney"></i>
+								<i className="icon-user"></i>
 	    					</a>
-							<div class="dropdown-menu">
+							<div className="dropdown-menu">
 								
 							</div>
 						</div>
