@@ -1,0 +1,57 @@
+@import "../../styles/General.scss";
+@import "../../styles/Colors";
+
+
+.header {
+	&:hover {
+		opacity: 0.9;
+	}
+	&:active {
+		opacity: 0.5;
+	}
+
+	margin: 0px;
+	padding: 10px 25px;
+
+	outline: none;
+	border: none;
+	/*border-radius: 5px;*/
+
+	background-color: $success;
+
+	.text {
+		font-weight: 600;
+		font-size: 12pt;
+
+		/*color: $primaryButtonTxt;*/
+	}
+	.logo {
+
+	}
+}
+
+.header-right {
+	@extend .ml-auto;
+}
+
+.header-nav {
+	@extend .list-inline;
+	li {
+		display: inline-flex;
+		@extend .flex-column;
+	}
+}
+
+.dropdown-nav {
+	.dropdown-menu {
+		display: none;
+	}
+	.dropdown-toggle {
+		.arrow {
+			display: block;
+			width: 11px;
+			height: 7px;
+			background-color: $yellow;
+		}
+	}
+}

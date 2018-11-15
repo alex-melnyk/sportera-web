@@ -1,0 +1,52 @@
+@import "./fontello/fontello.scss";
+
+$font_base: 14px;
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: $font_base;
+	margin: 0;
+	padding: 0;	
+}
+
+.d-flex {
+	display: flex;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.ml-auto {
+	margin-left: auto !important;
+}
+
+.list-inline {
+	list-style: none;
+}
+
+ul, ol {
+	padding: 0;
+	margin: 0;
+}
+
+
+
+
+
