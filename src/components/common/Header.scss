@@ -2,35 +2,87 @@
 
 
 .header {
-	@include h {
-		/*opacity: 0.9;*/
-	}
-	&:active {
-		/*opacity: 0.5;*/
-	}
-
 	margin: 0px;
 	padding: 10px 25px;
-
 	outline: none;
 	border: none;
-	/*border-radius: 5px;*/
-
 	background-color: $header_bg;
-
-	.text {
-		font-weight: 600;
-		font-size: 12pt;
-
-		/*color: $primaryButtonTxt;*/
-	}
 	.logo {
-
+		@extend .d-block;
+		@extend .ml20;
+		img {
+			@extend .d-block;
+			max-width: 100%;
+			width: 127px;
+			height: auto;
+			margin-top: 5px;
+		}
 	}
-}
-
-.nav-toggler {
-	color: $white;
+	.dropdown-nav {
+		.dropdown-menu {
+			@extend .d-none;
+		}
+		.dropdown-toggle {
+			@include h {
+				text-decoration: none;
+			}
+			@extend .d-flex;
+			@extend .justify-content-center;
+			@extend .align-items-center;
+			@extend .flex-wrap;
+			@extend .ml25;
+			text-decoration: none;
+			color: $white;
+			.arrow {
+				@extend .d-block;
+				@include fz(8);
+			}
+		}
+		.dropdown-item-col {
+			@extend .d-inline-flex;
+			@extend .flex-column;
+			color: $white;
+			h6 {
+			}
+			span {
+				@include fz(12)
+				@include fw(600)
+				color: $success_light;
+			}
+		}
+		.avatar-photo {
+			@extend .d-block;
+			width: 35px;
+			height: 35px;
+			@include r(50%);
+			background-color: $grey;
+			@extend .ml10;
+			overflow: hidden;
+			position: relative;
+			img {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				@include tf(translate(-50%, -50%));
+				&.x2 {
+					@include tf(translate(-50%, -50%) scale(0.5));
+				}
+			}
+		}
+		.club-logo {
+			@extend .ml10;
+			i {
+				@include fz(26)
+				line-height: 1.2;
+			}
+		}
+		.arrow-wrap {
+			@extend .ml10;
+		}
+	}
+	.nav-toggler {
+		color: $white;
+	}
 }
 
 .header-left {
@@ -39,21 +91,8 @@
 	@extend .align-items-center;
 }
 
-.logo {
-	@extend .d-block;
-	@extend .ml20;
-	img {
-		@extend .d-block;
-		max-width: 100%;
-		width: 127px;
-		height: auto;
-		margin-top: 5px;
-	}
-}
-
 .header-right {
 	@extend .ml-auto;
-	/*@extend .flex-wrap;*/
 }
 
 .header-nav {
@@ -64,65 +103,5 @@
 	}
 }
 
-.dropdown-nav {
-	.dropdown-menu {
-		@extend .d-none;
-	}
-	.dropdown-toggle {
-		@include h {
-			text-decoration: none;
-		}
-		@extend .d-flex;
-		@extend .justify-content-center;
-		@extend .align-items-center;
-		@extend .flex-wrap;
-		@extend .ml25;
-		text-decoration: none;
-		color: $white;
-		.arrow {
-			@include fz(16);
-		}
-	}
-	.dropdown-item-col {
-		@extend .d-inline-flex;
-		@extend .flex-column;
-		color: $white;
-		span {
-			@include fz(12)
-			@include fw(600)
-			color: $success_light;
-		}
-	}
-	.avatar-photo {
-		@extend .d-block;
-		width: 35px;
-		height: 35px;
-		@include r(50%);
-		background-color: $grey;
-		@extend .ml10;
-		overflow: hidden;
-		position: relative;
-		img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			@include tf(translate(-50%, -50%));
-			&.x2 {
-				@include tf(translate(-50%, -50%) scale(0.5));
-			}
-
-		}
-	}
-	.club-logo {
-		@extend .ml10;
-		i {
-			@include fz(26)
-		}
-	}
-	.arrow-wrap {
-		@extend .ml20;
-		width: 6px;
-	}
-}
 
 

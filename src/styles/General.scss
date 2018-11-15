@@ -76,5 +76,12 @@ ul, ol {
 	@include tf(scale(0.5))
 }
 
+.Page-content {
+	position: relative;
+	padding-left: 161px;
+	padding-top: 30px;
+}
+
+
 
 

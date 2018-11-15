@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 
 import i18n from '../i18n';
-import {Button} from './common';
 import {Header} from './common';
+import {Left_nav} from './common';
+import {Icons} from './common';
 
 
 import './App.scss';
@@ -13,10 +14,11 @@ class App extends Component {
         return (
             <div className="App">
                 <Header />
-                <Button
-                    text={i18n.t('click_me')}
-                    onClick={() => {}}
-                />
+                <div className="Page-content"> 
+                    <Left_nav />
+                    <Icons />
+                </div>
+
             </div>
         );
     }
