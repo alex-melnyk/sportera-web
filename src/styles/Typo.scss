@@ -1,0 +1,16 @@
+p {
+	@include selection($success_light);
+}
+
+@include hd {
+	font-family: 'Montserrat', sans-serif;
+	@include fw(600);
+	margin: 0;
+	padding: 0;
+	line-height: 1.4;
+	@include selection($success_light);
+}	
+
+h6 {
+	@include fz(14)
+}
