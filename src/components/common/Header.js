@@ -11,13 +11,12 @@ const Header = () => (
         <div className="d-flex">
             <div className="header-left">
                 <a href="#" className="nav-toggler">
-                    <span className="icon"> icon</span>
+                    <i className="ft-toggler"></i>
                 </a>
                 <a href="#" className="logo">
                     <img
                         src={LogoImage}
                         alt=""
-                        width="50"
                     />
                 </a>
             </div>
@@ -28,20 +27,31 @@ const Header = () => (
                         <div className="dropdown-nav">
                             <a className="dropdown-toggle" href="#">
 	    						<span className="arrow">
-									<i className="icon-calendar" style={{fontSize: '20pt'}}></i>
+									<i className="ft-calendar" style={{fontSize: '20pt'}}></i>
 								</span>
 
-                                {/*<i className="icon-chat"></i>*/}
-                                {/*<i className="icon-club"></i>*/}
-                                {/*<i className="icon-command"></i>*/}
-                                {/*<i className="icon-crm"></i>*/}
-                                {/*<i className="icon-dashboard"></i>*/}
-                                {/*<i className="icon-docs"></i>*/}
-                                {/*<i className="icon-payment"></i>*/}
-                                {/*<i className="icon-settings"></i>*/}
-                                {/*<i className="icon-toggler"></i>*/}
-                                {/*<i className="icon-tourney"></i>*/}
-                                {/*<i className="icon-user"></i>*/}
+                                <i className="ft-chat"></i>
+                                <i className="ft-club"></i>
+                                <i className="ft-command"></i>
+                                <i className="ft-crm"></i>
+                                <i className="ft-dashboard"></i>
+                                <i className="ft-docs"></i>
+                                <i className="ft-payment"></i>
+                                <i className="ft-settings"></i>
+                                <i className="ft-toggler"></i>
+                                <i className="ft-tourney"></i>
+                                <i className="ft-user"></i>
+                                {/*<i className="ft-chat"></i>*/}
+                                {/*<i className="ft-club"></i>*/}
+                                {/*<i className="ft-command"></i>*/}
+                                {/*<i className="ft-crm"></i>*/}
+                                {/*<i className="ft-dashboard"></i>*/}
+                                {/*<i className="ft-docs"></i>*/}
+                                {/*<i className="ft-payment"></i>*/}
+                                {/*<i className="ft-settings"></i>*/}
+                                {/*<i className="ft-toggler"></i>*/}
+                                {/*<i className="ft-tourney"></i>*/}
+                                {/*<i className="ft-user"></i>*/}
                             </a>
                             <div className="dropdown-menu">
 
