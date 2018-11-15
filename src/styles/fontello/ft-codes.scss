@@ -1,5 +1,8 @@
 
-.icon-calendar:before { content: '\e800'; } /* '' */
+.icon-calendar:before {
+  font-family: "ft";
+  content: '\e800';
+} /* '' */
 .icon-chat:before { content: '\e801'; } /* '' */
 .icon-club:before { content: '\e802'; } /* '' */
 .icon-command:before { content: '\e803'; } /* '' */
