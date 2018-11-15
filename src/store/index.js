@@ -1,25 +1,42 @@
-import { createStore, applyMiddleware } from 'redux';
+import {applyMiddleware, compose, createStore} from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import {persistReducer, persistStore} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import {routerMiddleware} from 'connected-react-router';
+import {createBrowserHistory} from 'history';
 
 import Reducers from './reducers';
 import Middleware from './middleware';
 import Sagas from './sagas';
 
-// create the saga middleware
+const History = createBrowserHistory();
+
+const persistedReducer = persistReducer({
+    key: 'root',
+    storage,
+    whitelist: ['auth']
+}, Reducers(History));
+
 const sagaMiddleware = createSagaMiddleware();
 
 const listOfMiddleware = [
+    routerMiddleware(History),
     ...Middleware,
     sagaMiddleware
 ];
 
-// mount it on the Store
 const Store = createStore(
-    Reducers,
-    applyMiddleware(...listOfMiddleware)
+    persistedReducer,
+    {},
+    compose(applyMiddleware(...listOfMiddleware))
 );
 
-// then run the saga
+const Persistor = persistStore(Store);
+
 sagaMiddleware.run(Sagas);
 
-export {Store};
+export {
+    History,
+    Persistor,
+    Store
+};

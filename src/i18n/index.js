@@ -9,9 +9,9 @@ i18next.init({
     },
     lng: 'en', // 'ru' | 'uk'
     resources: {
-        en: { translation: Locales.en },
-        ru: { translation: Locales.ru },
-        uk: { translation: Locales.uk }
+        en: {translation: Locales.en},
+        ru: {translation: Locales.ru},
+        uk: {translation: Locales.uk}
     },
 });
 
