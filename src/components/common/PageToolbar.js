@@ -4,7 +4,7 @@ import './PageToolbar.scss';
 import './Breadcrumbs.scss';
 import './Btns.scss';
 
-const PageToolbar = () => (
+const PageToolbar = ({actions}) => (
 	<div
 		className="settings-row"
 	>
@@ -15,20 +15,7 @@ const PageToolbar = () => (
 		</ul>
 
 		<div className="right-settings">
-			<div className="settings-item success-group-sm">
-				<a href="#" className="btn-sm btn-success active">
-					<i className="ft-block"></i>
-				</a>
-				<a href="#" className="btn-sm btn-success">
-					<i className="ft-list-view"></i>
-				</a>
-			</div>
-			<div className="settings-item">
-				<a href="#" className="btn btn-success">
-					<i className="ft-plus"></i>
-					<span>Создать команду</span>
-				</a>
-			</div>
+			{actions}
 		</div>
 		
 	</div>

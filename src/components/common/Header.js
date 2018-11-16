@@ -29,7 +29,6 @@ const Header = ({onMenuToggle}) => (
 
 			<div className="header-right">
 				<ul className="header-nav">
-
 					<li>
 						<div className="dropdown-nav">
 							<a className="dropdown-toggle" href="#">
@@ -97,7 +96,6 @@ const Header = ({onMenuToggle}) => (
 								</ul>
 							</div>
 						</div>
-
 					</li>
 
 					<li>
