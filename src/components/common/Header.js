@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import LogoImage from '../../assets/img/tpl/logo.svg';
 import UserAvatar from '../../assets/img/avatar2x.png';
+import ClubLogo from '../../assets/img/club/logo2x.png';
 
 import './Header.scss';
 
@@ -28,31 +29,6 @@ const Header = ({onMenuToggle}) => (
 
 			<div className="header-right">
 				<ul className="header-nav">
-					{/*<li>
-						<div className="dropdown-nav">
-							<a className="dropdown-toggle" href="#">
-								<span className="arrow">
-									<i className="ft-calendar"></i>
-								</span>*/}
-
-								{/*<i className="ft-chat"></i>*/}
-								{/*<i className="ft-club"></i>*/}
-								{/*<i className="ft-command"></i>*/}
-								{/*<i className="ft-crm"></i>*/}
-								{/*<i className="ft-dashboard"></i>*/}
-								{/*<i className="ft-docs"></i>*/}
-								{/*<i className="ft-payment"></i>*/}
-								{/*<i className="ft-settings"></i>*/}
-								{/*<i className="ft-toggler"></i>*/}
-								{/*<i className="ft-tourney"></i>*/}
-								{/*<i className="ft-user"></i>*/}
-							{/*</a>
-							<div className="dropdown-menu">
-
-							</div>
-						</div>
-
-					</li>*/}
 
 					<li>
 						<div className="dropdown-nav">
@@ -70,8 +46,54 @@ const Header = ({onMenuToggle}) => (
 									<span className="arrow"><i className="ft-arrow-down"></i></span>
 								</div>
 							</a>
-							<div className="dropdown-menu">
-								{/* will add later according pages */}
+							<div className="dropdown-menu open">
+								<ul className="dropdown-list">
+									<li>
+										<a href="#" className="dropdown-item">
+											<span className="club-logo">
+												<img
+													className="x2"
+													src={ClubLogo}
+													alt=""
+													title=""
+												/>
+											</span>
+											<span>Стрела</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" className="dropdown-item">
+											<span className="club-logo">
+												<img
+													className="x2"
+													src={ClubLogo}
+													alt=""
+													title=""
+												/>
+											</span>
+											<span>Динамо</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" className="dropdown-item">
+											<span className="club-logo">
+												<img
+													className="x2"
+													src={ClubLogo}
+													alt=""
+													title=""
+												/>
+											</span>
+											<span>Феникс</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" className="dropdown-item drordown-item-large text-success">
+											<i className="ft-plus-rounded"></i>
+											<span>Добавить клуб</span>
+										</a>
+									</li>
+								</ul>
 							</div>
 						</div>
 
@@ -98,8 +120,40 @@ const Header = ({onMenuToggle}) => (
 									<span className="arrow"><i className="ft-arrow-down"></i></span>
 								</div>
 							</a>
-							<div className="dropdown-menu">
-								{/* will add later according pages */}
+							
+							<div className="dropdown-menu open">
+								<ul className="dropdown-list">
+									<li>
+										<a href="#" className="dropdown-item">
+											<i className="ft-user"></i>
+											<span>Мой профиль</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" className="dropdown-item">
+											<i className="ft-union"></i>
+											<span>Онбординг</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" className="dropdown-item">
+											<i className="ft-price-round"></i>
+											<span>Оплата</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" className="dropdown-item">
+											<i className="ft-club"></i>
+											<span>Мои клубы</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" className="dropdown-item drordown-item-large">
+											<i className="ft-exid"></i>
+											<span>Выйти из аккаунта</span>
+										</a>
+									</li>
+								</ul>
 							</div>
 						</div>
 
