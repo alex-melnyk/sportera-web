@@ -15,7 +15,7 @@ class TeamsScreen extends Component {
 
 
 					{
-						Object.keys([...new Array(3)]).map((key)=> (
+						Object.keys([...new Array(8)]).map((key)=> (
 							<TeamCardSimple 
 								key={key}
 							/>

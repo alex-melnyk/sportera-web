@@ -257,6 +257,12 @@
 	}
 }
 
+@mixin min1366 {
+	@media print, screen and (min-width: 1366px) {
+		@content;
+	}
+}
+
 
 @mixin min768-max1199 {
 	@media print, screen and (min-width: 768px) and (max-width: 1199px) {
@@ -291,13 +297,7 @@
 		@content;
 	}
 }
-/*(min-width: 640px) and (max-width: 1023px) END*/
 
-@mixin minh1070-min1300 {
-	@media print, screen and (min-height: 1070px) and (min-width: 1300px) {
-		@content;
-	}
-}
 /*(min-height: 1070px) and (mmin-width: 1300px) END*/
 
 @mixin minh1081 {

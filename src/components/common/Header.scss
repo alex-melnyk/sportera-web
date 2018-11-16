@@ -126,6 +126,16 @@
 				text-decoration: none;
 				@include tm;
 			}
+			@include fc {
+				outline: none;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+			}
+			&.active {
+				outline: none;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+			}
 			@extend .d-flex;
 			@extend .justify-content-center;
 			@extend .align-items-center;

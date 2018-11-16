@@ -46,7 +46,8 @@ const Header = ({onMenuToggle}) => (
 									<span className="arrow"><i className="ft-arrow-down"></i></span>
 								</div>
 							</a>
-							<div className="dropdown-menu open">
+							{/*<div className="dropdown-menu open">*/}
+							<div className="dropdown-menu">
 								<ul className="dropdown-list">
 									<li>
 										<a href="#" className="dropdown-item">
@@ -120,8 +121,8 @@ const Header = ({onMenuToggle}) => (
 									<span className="arrow"><i className="ft-arrow-down"></i></span>
 								</div>
 							</a>
-							
-							<div className="dropdown-menu open">
+							{/* <div className="dropdown-menu open">*/}
+							<div className="dropdown-menu">
 								<ul className="dropdown-list">
 									<li>
 										<a href="#" className="dropdown-item">
