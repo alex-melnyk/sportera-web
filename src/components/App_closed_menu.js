@@ -2,10 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 
 import i18n from '../i18n';
-import {Header} from './common';
-import {Left_nav} from './common';
-import {Icons} from './common';
-
+import {Header, Left_nav, Icons} from './common';
 
 import './App.scss';
 

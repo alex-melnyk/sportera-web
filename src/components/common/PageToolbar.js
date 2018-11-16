@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './SettingsRow.scss';
+import './PageToolbar.scss';
 import './Breadcrumbs.scss';
 import './Btns.scss';
 
-const SettingsRow = () => (
+const PageToolbar = () => (
 	<div
 		className="settings-row"
 	>
@@ -35,4 +35,4 @@ const SettingsRow = () => (
 	</div>
 );
 
-export {SettingsRow};
+export {PageToolbar};

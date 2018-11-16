@@ -32,6 +32,7 @@
 			border-top: 1px solid $grey_active_bg;
 			@include py(10px);
 			background-color: transparent;
+			@include tm
 			@include b {
 				@include ct;
 				position: absolute;
@@ -51,6 +52,7 @@
 				background-color: $grey_active_bg;
 				text-decoration: none;
 				box-shadow: none;
+				@include tm
 				@include b {
 					@extend .d-none;
 				}
@@ -89,5 +91,21 @@
 				@include fz(16);
 			}
 		}
+	}
+}
+
+
+.Page-content {
+	&.small-menu {
+		padding-left: 70px;
+		.left-nav {
+			width: 70px;
+		}
+		.nav-item-title {
+			@extend .d-none;
+		}
+	}
+	.left-nav {
+		width: 161px;
 	}
 }

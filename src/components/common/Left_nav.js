@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 
+import 'simplebar';
+import 'simplebar/dist/simplebar.css';
+
 import './Left_nav.scss';
 
 const Left_nav = () => (
     <aside
         className="left-nav"
     >
-    	<ul className="page-main-nav">
+    	<ul className="page-main-nav" data-simplebar>
     		<li>
     			<a href="#" className="nav-item">
     				<span className="nav-item-icon">

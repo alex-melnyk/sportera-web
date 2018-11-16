@@ -24,6 +24,7 @@
 		.dropdown-toggle {
 			@include h {
 				text-decoration: none;
+				@include tm
 			}
 			@extend .d-flex;
 			@extend .justify-content-center;
@@ -32,6 +33,7 @@
 			@extend .ml25;
 			text-decoration: none;
 			color: $white;
+			@include tm
 			.arrow {
 				@extend .d-block;
 				@include fz(8);

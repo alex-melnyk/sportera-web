@@ -4,20 +4,6 @@
 @import "./Gap.scss";
 @import "./Typo.scss";
 
-$font_base: 14px;
-
-
-* {
-	box-sizing: border-box;
-}
-
-body {
-	font-family: 'Montserrat', sans-serif;
-	font-size: $font_base;
-	margin: 0;
-	padding: 0;	
-	line-height: 1.4;
-}
 
 .d-none {
 	display: none;
@@ -79,18 +65,6 @@ ul, ol {
 .Page-content {
 	position: relative;
 	padding-left: 161px;
-	&.small-menu {
-		padding-left: 70px;
-		.left-nav {
-			width: 70px;
-		}
-		.nav-item-title {
-			@extend .d-none;
-		}
-	}
-	.left-nav {
-		width: 161px;
-	}
 }
 
 .main {

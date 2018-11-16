@@ -2,11 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 
 import i18n from '../i18n';
-import {Header} from './common';
-import {Left_nav} from './common';
-import {Icons} from './common';
-import {SettingsRow} from './common';
-
+import {Header, Left_nav, Icons, PageToolbar} from './common';
 
 import './App.scss';
 
@@ -18,7 +14,7 @@ class App extends Component {
                 <div className="Page-content"> 
                     <Left_nav />
                     <main className="main">
-                        <SettingsRow />
+                        <PageToolbar />
                         <Icons />
                     </main>
                 </div>

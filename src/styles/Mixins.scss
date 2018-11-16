@@ -72,7 +72,7 @@
 }
 
 @mixin tm {
-	@include ts(all $transition-time ease-out);
+	@include ts(all 0.2s ease-out);
 }
 
 
