@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 
 import i18n from '../i18n';
-import {Header, Sidebar, Icons, PageToolbar} from './common';
+import {Header, Sidebar, Icons, PageToolbar, CommandCard} from './common';
 
 import './App.scss';
 
@@ -29,6 +29,7 @@ class App extends Component {
                     <Sidebar collapsed={menuCollapsed} />
                     <main className="main">
                         <PageToolbar />
+                        <CommandCard />
                         <Icons />
                     </main>
                 </div>

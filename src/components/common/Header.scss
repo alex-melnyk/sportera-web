@@ -34,6 +34,7 @@
 			text-decoration: none;
 			color: $white;
 			@include tm
+			cursor: pointer;
 			.arrow {
 				@extend .d-block;
 				@include fz(8);
@@ -83,6 +84,7 @@
 	}
 	.nav-toggler {
 		color: $white;
+		cursor: pointer;
 	}
 }
 

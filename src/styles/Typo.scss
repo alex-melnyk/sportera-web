@@ -11,6 +11,27 @@ p {
 	@include selection($success_light);
 }	
 
-h6 {
-	@include fz(14)
+h4 {
+	@include fz(18);
 }
+
+h6 {
+	@include fz(14);
+}
+
+p {
+	@include fz(14);
+	padding: 0;
+	margin: 0;
+	margin-bottom: 15px;
+	&.bigger {
+		@include fz(16);
+	}
+}
+
+span {
+	&.bigger {
+		@include fz(16);
+	}
+}
+
