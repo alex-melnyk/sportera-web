@@ -14,7 +14,9 @@ const SecurityInterlayer = ({component: Component, authorized, ...rest}) => {
             {...rest}
             render={(props) => (
                 authorized ? (
-                    <Component {...props} />
+                    <Component
+                        {...props}
+                    />
                 ) : (
                     <Redirect
                         to={{
