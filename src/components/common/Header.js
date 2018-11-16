@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import LogoImage from '../../assets/img/tpl/logo.svg';
@@ -11,9 +11,12 @@ const Header = ({onMenuToggle}) => (
 		{/* !NOTE! if image not 2x - delete className="x2" from image */}
 		<div className="d-flex">
 			<div className="header-left">
-				<a className="nav-toggler" onClick={() => onMenuToggle && onMenuToggle()}>
+				<span
+                    className="nav-toggler"
+                    onClick={() => onMenuToggle && onMenuToggle()}
+                >
 					<i className="ft-toggler"></i>
-				</a>
+				</span>
 				<a href="#" className="logo">
 					<img
 						src={LogoImage}
@@ -101,7 +104,7 @@ const Header = ({onMenuToggle}) => (
 						</div>
 
 					</li>
-					
+
 				</ul>
 			</div>
 		</div>

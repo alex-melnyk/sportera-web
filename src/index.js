@@ -6,9 +6,8 @@ import {ConnectedRouter} from "connected-react-router";
 
 import {History, Store} from "./store";
 import {unregister} from './serviceWorker';
-
-import {Routes} from "./navigation";
-import {App, LoginScreen, SecurityInterlayer} from "./components";
+import {App, LoginScreen} from "./components";
+import {SecurityInterlayer} from "./components/SecurityInterlayer";
 
 global.__DEV__ = process.env.NODE_ENV === 'development';
 
@@ -17,11 +16,11 @@ const Root = () => (
         <ConnectedRouter history={History}>
             <div className="App">
                 <Route
-                    path={Routes.LOGIN}
+                    path="/login"
                     component={LoginScreen}
                 />
                 <SecurityInterlayer
-                    exact
+                    exactly={true}
                     path="/"
                     component={App}
                 />
