@@ -1,0 +1,97 @@
+@import "./Colors.scss";
+@import "./Mixins.scss";
+@import "./fontello/fontello.scss";
+@import "./Gap.scss";
+@import "./Typo.scss";
+
+
+.d-none {
+	display: none;
+}
+
+.d-block {
+	display: block;
+}
+
+.d-inline-block {
+	display: inline-block;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.d-inline-flex {
+	display: inline-flex;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.justify-content-between {
+	justify-content: space-between;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.align-items-flex-start {
+	align-items: flex-start;
+}
+
+.align-items-end {
+	align-items: flex-end;
+}
+
+.align-items-baseline {
+	align-items: baseline;
+}
+
+.ml-auto {
+	margin-left: auto !important;
+}
+
+.list-inline {
+	list-style: none;
+}
+
+ul, ol {
+	padding: 0;
+	margin: 0;
+}
+
+.x2 {
+	@include tf(scale(0.5))
+}
+
+.Page-content {
+	position: relative;
+	padding-left: 161px;
+	min-height: calc(100vh - 55px);
+}
+
+.main {
+	display: block;
+	width: 100%;
+	padding-right: 25px;
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+

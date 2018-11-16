@@ -1,5 +1,7 @@
-const Routes = {
-    LOGIN: '/login'
-};
+const Routes = [
+
+];
+
+
 
 export {Routes};
