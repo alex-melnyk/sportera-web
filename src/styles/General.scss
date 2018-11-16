@@ -79,9 +79,28 @@ ul, ol {
 .Page-content {
 	position: relative;
 	padding-left: 161px;
-	padding-top: 30px;
+	&.small-menu {
+		padding-left: 70px;
+		.left-nav {
+			width: 70px;
+		}
+		.nav-item-title {
+			@extend .d-none;
+		}
+	}
+	.left-nav {
+		width: 161px;
+	}
 }
 
+.main {
+	display: block;
+	width: 100%;
+	padding-right: 25px;
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
 
 
 

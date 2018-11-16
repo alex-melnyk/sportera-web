@@ -1,0 +1,18 @@
+@import "../../styles/General.scss";
+
+.settings-row {
+	@extend .d-flex;
+	@extend .mb20;
+}
+
+.right-settings {
+	@extend .d-inline-flex;
+	@extend .ml-auto;
+	@extend .justify-content-center;
+	@extend .align-items-center;
+}
+
+.settings-item {
+	@extend .d-inline-flex;
+	@extend .ml10;
+}

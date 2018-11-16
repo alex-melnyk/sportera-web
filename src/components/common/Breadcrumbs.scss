@@ -1,0 +1,14 @@
+@import "../../styles/General.scss";
+
+.breadcrumbs {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	/*@extend .d-flex;*/
+	
+}
+
+.bredcrumb-item {
+	@include fz(24);
+	@include fw(400);
+}
