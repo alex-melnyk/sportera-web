@@ -3,4 +3,5 @@ export * from './Header';
 export * from './Sidebar';
 export * from './Icons';
 export * from './PageToolbar';
-export * from './CommandCard';
+export * from './TeamCardSimple';
+export * from './TeamCard';

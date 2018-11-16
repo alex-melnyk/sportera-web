@@ -1,24 +1,35 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 
-import {CommandCard, PageToolbar} from "../../common";
+import {TeamCard, TeamCardSimple, PageToolbar} from "../../common";
 
 class TeamsScreen extends Component {
-    render() {
-        return (
-            <div>
-                <PageToolbar/>
+	render() {
+		return (
+			<div>
+				<PageToolbar/>
+				
+				<div className="team-card-wrap grid-view">
 
-                TEAMS SCREEN
+					<TeamCard />
 
-                <Link to="/teams/information">
-                    TO INFO
-                </Link>
 
-                <CommandCard />
-            </div>
-        );
-    }
+					{
+						Object.keys([...new Array(3)]).map((key)=> (
+							<TeamCardSimple 
+								key={key}
+							/>
+						))
+					}
+
+					<TeamCard />
+
+				</div>
+				
+			</div>  
+
+		);
+	}
 }
 
 export {TeamsScreen};
