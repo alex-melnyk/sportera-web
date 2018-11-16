@@ -30,7 +30,6 @@ class App extends Component {
                 <div className={`Page-content ${menuCollapsed && 'small-menu'}`}>
                     <Sidebar collapsed={menuCollapsed}/>
                     <main className="main">
-                        <PageToolbar/>
                         <Switch location={this.props.location}>
                             <Route
                                 exact={true}
