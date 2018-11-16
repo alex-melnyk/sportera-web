@@ -1,6 +1,6 @@
 /*@import "../styles/General.scss";*/
 
-/*$font_base: 14px;*/
+$font_base: 14px;
 
 * {
 	box-sizing: border-box;
@@ -8,7 +8,7 @@
 
 body {
 	font-family: 'Montserrat', sans-serif;
-	/*font-size: $font_base;*/
+	font-size: $font_base;
 	margin: 0;
 	padding: 0;	
 	line-height: 1.4;

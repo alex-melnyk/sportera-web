@@ -41,8 +41,20 @@
 	justify-content: center;
 }
 
+.justify-content-between {
+	justify-content: space-between;
+}
+
 .align-items-center {
 	align-items: center;
+}
+
+.align-items-end {
+	align-items: flex-end;
+}
+
+.align-items-baseline {
+	align-items: baseline;
 }
 
 .ml-auto {
