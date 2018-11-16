@@ -2,17 +2,31 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 
 import i18n from '../i18n';
-import {Header, Left_nav, Icons, PageToolbar} from './common';
+import {Header, Sidebar, Icons, PageToolbar} from './common';
 
 import './App.scss';
 
 class App extends Component {
+    state = {
+        menuCollapsed: false
+    };
+
+    toggleMenuPressed = () => {
+        this.setState(({menuCollapsed}) => ({
+            menuCollapsed: !menuCollapsed
+        }));
+    };
+
     render() {
+        const {
+            menuCollapsed
+        } = this.state;
+
         return (
             <div className="App">
-                <Header />
-                <div className="Page-content"> 
-                    <Left_nav />
+                <Header onMenuToggle={this.toggleMenuPressed} />
+                <div className={`Page-content ${menuCollapsed && 'small-menu'}`}>
+                    <Sidebar collapsed={menuCollapsed} />
                     <main className="main">
                         <PageToolbar />
                         <Icons />

@@ -1,5 +1,5 @@
 export * from './Button';
 export * from './Header';
-export * from './Left_nav';
+export * from './Sidebar';
 export * from './Icons';
 export * from './PageToolbar';

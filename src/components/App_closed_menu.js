@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 
 import i18n from '../i18n';
-import {Header, Left_nav, Icons} from './common';
+import {Header, Sidebar, Icons} from './common';
 
 import './App.scss';
 
@@ -12,7 +12,7 @@ class App extends Component {
             <div className="App">
                 <Header />
                 <div className="Page-content small-menu"> 
-                    <Left_nav />
+                    <Sidebar />
                     <main className="main">
                         <Icons />
                     </main>

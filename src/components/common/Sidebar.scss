@@ -32,7 +32,7 @@
 			border-top: 1px solid $grey_active_bg;
 			@include py(10px);
 			background-color: transparent;
-			@include tm
+			@include tm;
 			@include b {
 				@include ct;
 				position: absolute;
@@ -52,7 +52,7 @@
 				background-color: $grey_active_bg;
 				text-decoration: none;
 				box-shadow: none;
-				@include tm
+				@include tm;
 				@include b {
 					@extend .d-none;
 				}

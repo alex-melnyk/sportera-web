@@ -1,18 +1,17 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import LogoImage from '../../assets/img/tpl/logo.svg';
 import UserAvatar from '../../assets/img/avatar2x.png';
 
 import './Header.scss';
 
-const Header = () => (
-	<header
-		className="header"
-	>
+const Header = ({onMenuToggle}) => (
+	<header className="header">
 		{/* !NOTE! if image not 2x - delete className="x2" from image */}
 		<div className="d-flex">
 			<div className="header-left">
-				<a href="#" className="nav-toggler">
+				<a className="nav-toggler" onClick={() => onMenuToggle && onMenuToggle()}>
 					<i className="ft-toggler"></i>
 				</a>
 				<a href="#" className="logo">
@@ -110,5 +109,9 @@ const Header = () => (
 
 	</header>
 );
+
+Header.propTypes = {
+	onMenuToggle: PropTypes.func
+};
 
 export {Header};

@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import 'simplebar';
 import 'simplebar/dist/simplebar.css';
 
-import './Left_nav.scss';
+import './Sidebar.scss';
 
-const Left_nav = () => (
-    <aside
-        className="left-nav"
-    >
+const Sidebar = () => (
+    <aside className="left-nav">
     	<ul className="page-main-nav" data-simplebar>
     		<li>
     			<a href="#" className="nav-item">
@@ -102,4 +101,7 @@ const Left_nav = () => (
     </aside>
 );
 
-export {Left_nav};
+Sidebar.propTypes = {
+};
+
+export {Sidebar};
