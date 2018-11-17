@@ -80,8 +80,16 @@ class TeamsScreen extends Component {
                             <TeamCard/>
                         </div>
                     ) : (
-                        <div>
-                            LIST
+                        <div className="team-card-wrap list-view">
+                            <TeamCard/>
+                            {
+                                Object.keys([...new Array(8)]).map((key) => (
+                                    <TeamCardSimple
+                                        key={key}
+                                    />
+                                ))
+                            }
+                            <TeamCard/>
                         </div>
                     )
                 }
