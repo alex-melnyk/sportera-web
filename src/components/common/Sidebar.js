@@ -12,7 +12,7 @@ const Sidebar = () => (
             <li>
                 <NavLink activeClassName="active" className="nav-item" to="/" exact={true}>
     				<span className="nav-item-icon">
-    					<i className="ft-dashboard"></i>
+    					<i className="ft-dashboard" />
     				</span>
                     <span className="nav-item-title">Дэшборд</span>
                 </NavLink>
@@ -20,7 +20,7 @@ const Sidebar = () => (
             <li>
                 <NavLink activeClassName="active" className="nav-item" to="/teams">
                     <span className="nav-item-icon small-icon">
-                        <i className="ft-command"></i>
+                        <i className="ft-command" />
                     </span>
                     <span className="nav-item-title">Команды</span>
                 </NavLink>
@@ -28,7 +28,7 @@ const Sidebar = () => (
             <li>
                 <a href="#" className="nav-item">
     				<span className="nav-item-icon">
-    					<i className="ft-user"></i>
+    					<i className="ft-user" />
     				</span>
                     <span className="nav-item-title">Игроки</span>
                 </a>
@@ -36,7 +36,7 @@ const Sidebar = () => (
             <li>
                 <a href="#" className="nav-item">
     				<span className="nav-item-icon">
-    					<i className="ft-docs"></i>
+    					<i className="ft-docs" />
     				</span>
                     <span className="nav-item-title">Документы</span>
                 </a>
@@ -44,7 +44,7 @@ const Sidebar = () => (
             <li>
                 <a href="#" className="nav-item">
     				<span className="nav-item-icon">
-    					<i className="ft-calendar"></i>
+    					<i className="ft-calendar" />
     				</span>
                     <span className="nav-item-title">Календарь</span>
                 </a>
@@ -52,7 +52,7 @@ const Sidebar = () => (
             <li>
                 <a href="#" className="nav-item">
     				<span className="nav-item-icon">
-    					<i className="ft-club"></i>
+    					<i className="ft-club" />
     				</span>
                     <span className="nav-item-title">Клуб</span>
                 </a>
@@ -60,7 +60,7 @@ const Sidebar = () => (
             <li>
                 <a href="#" className="nav-item">
     				<span className="nav-item-icon">
-    					<i className="ft-payment"></i>
+    					<i className="ft-payment" />
     				</span>
                     <span className="nav-item-title">Платежи</span>
                 </a>
@@ -68,7 +68,7 @@ const Sidebar = () => (
             <li>
                 <a href="#" className="nav-item">
     				<span className="nav-item-icon">
-    					<i className="ft-tourney"></i>
+    					<i className="ft-tourney" />
     				</span>
                     <span className="nav-item-title">Турниры</span>
                 </a>
@@ -76,7 +76,7 @@ const Sidebar = () => (
             <li>
                 <a href="#" className="nav-item">
     				<span className="nav-item-icon">
-    					<i className="ft-chat"></i>
+    					<i className="ft-chat" />
     				</span>
                     <span className="nav-item-title">Чат</span>
                 </a>
@@ -84,7 +84,7 @@ const Sidebar = () => (
             <li>
                 <a href="#" className="nav-item">
     				<span className="nav-item-icon">
-    					<i className="ft-crm"></i>
+    					<i className="ft-crm" />
     				</span>
                     <span className="nav-item-title">CRM</span>
                 </a>
@@ -92,7 +92,7 @@ const Sidebar = () => (
             <li>
                 <a href="#" className="nav-item">
     				<span className="nav-item-icon">
-    					<i className="ft-settings"></i>
+    					<i className="ft-settings" />
     				</span>
                     <span className="nav-item-title">Настройки</span>
                 </a>
