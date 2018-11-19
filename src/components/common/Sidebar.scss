@@ -32,6 +32,7 @@
 			@include py(10px);
 			background-color: transparent;
 			@include tm;
+			text-decoration: none;
 			@include b {
 				@include ct;
 				position: absolute;
@@ -47,15 +48,20 @@
 				@include fz(16);
 				@include fw(600);
 				color: $grey;
+				text-decoration: none;
 			}
 			@include h {
 				background-color: $grey_active_bg;
 				text-decoration: none;
 				box-shadow: none;
 				@include tm;
+				text-decoration: none;
 				@include b {
 					@extend .d-none;
 					@incude tm;
+				}
+				* {
+					text-decoration: none;
 				}
 			}
 			@include h {
