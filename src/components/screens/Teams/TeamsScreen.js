@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import i18n from '../../../i18n';
-import {PageToolbar, TeamCard, TeamCardSimple} from "../../common";
+import {PageToolbar, TeamCard, TeamCardSimple, Button, Modal} from "../../common";
 
 const LOOK = {
     CARD: 'CARD',
@@ -10,7 +10,8 @@ const LOOK = {
 
 class TeamsScreen extends Component {
     state = {
-        look: LOOK.CARD
+        look: LOOK.CARD,
+        modalVisible: false
     };
 
     setLAFPressed = (look) => {
@@ -40,19 +41,6 @@ class TeamsScreen extends Component {
         </div>
     );
 
-    renderActionButton = () => (
-        <div className="settings-item">
-            <a
-                href="#"
-                className="btn btn-success"
-                onClick={this.actionButtonPressed}
-            >
-                <i className="ft-plus"></i>
-                <span>Создать команду</span>
-            </a>
-        </div>
-    );
-
     render() {
         const {
             look
@@ -63,7 +51,13 @@ class TeamsScreen extends Component {
                 <PageToolbar
                     actions={[
                         this.renderLookToggle(),
-                        this.renderActionButton()
+                        (
+                            <Button
+                                icon="plus"
+                                text="Создать Команду"
+                                onClick={() => this.setState({modalVisible: true})}
+                            />
+                        )
                     ]}
                 />
                 {
@@ -93,7 +87,11 @@ class TeamsScreen extends Component {
                         </div>
                     )
                 }
-
+                <Modal visible={this.state.modalVisible}>
+                    <div>
+                        hgfiughsidf
+                    </div>
+                </Modal>
             </div>
 
         );

@@ -15,7 +15,13 @@ const PageToolbar = ({actions}) => (
 		</ul>
 
 		<div className="right-settings">
-			{actions}
+			{
+				actions.map((action) => (
+					<div className="settings-item">
+                        {action}
+					</div>
+				))
+			}
 		</div>
 		
 	</div>

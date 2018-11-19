@@ -1,26 +1,62 @@
-@import "../../styles/Colors";
+@import "../../styles/General";
 
-.button {
-  &:hover {
-    opacity: 0.9;
-  }
-  &:active {
-    opacity: 0.5;
-  }
-
-  margin: 5px;
-  padding: 10px 30px;
-
+.btn,
+.btn-sm {
+  @extend .d-inline-flex;
+  @extend .justify-content-center;
+  @extend .align-items-center;
+  @include py(7px);
+  @include fz(16);
+  line-height: 1.2;
   outline: none;
-  border: none;
-  border-radius: 5px;
+  border: 1px solid;
+  @include r(3px);
+  text-decoration: none;
+  min-height: 35px;
+  text-align: center;
+  @include tm;
+  @include h {
+    @include tm;
+    * {
+      text-decoration: none;
+    }
+  }
+}
 
-  /*background-color: $primaryButtonBg;*/
+.btn {
+  @include px(10px);
+  min-width: 160px;
+  @include tm;
+  i {
+    @include fz(12)
+  }
+  @include h {
+    @include tm;
+    * {
+      text-decoration: none;
+    }
+  }
+}
 
-  .text {
-    font-weight: 600;
-    font-size: 12pt;
+.btn-sm {
+  min-width: 35px;
+  width: 35px;
+}
 
-    /*color: $primaryButtonTxt;*/
+.btn-success {
+  background-color: $success;
+  border-color: $success;
+  @include h {
+    background-color: darken($success, 3%);
+  }
+  @include fc {
+    background-color: darken($success, 5%);
+  }
+  * {
+    color: $white;
+  }
+  span {
+    @include fz(14);
+    margin-left: 5px;
   }
 }
