@@ -17,7 +17,7 @@ const TeamCard = () => (
 				<div className="main-info">
 					<h4>Феникс 2008</h4>
 					<div className="players">
-						<i className="ft-command"></i>
+						<i className="ft-command"/>
 						<span>22</span>
 					</div>
 				</div>
@@ -36,7 +36,7 @@ const TeamCard = () => (
 								<p>Василий Марченко</p>
 							</div>	
 							<div className="flex-column arrow-column">
-								<i className="ft-arrow-down-filled"></i>
+								<i className="ft-arrow-down-filled"/>
 							</div>
 						</div>
 					</li>
@@ -68,7 +68,7 @@ const TeamCard = () => (
 								</div>
 							</div>	
 							<div className="flex-column arrow-column">
-								<i className="ft-arrow-down-filled"></i>
+								<i className="ft-arrow-down-filled"/>
 							</div>
 						</div>
 					</li>

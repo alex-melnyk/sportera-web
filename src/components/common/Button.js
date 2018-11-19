@@ -3,18 +3,22 @@ import PropTypes from 'prop-types';
 
 import './Button.scss';
 
-const Button = ({text, onClick}) => (
-    <button
-        className="button"
+const Button = ({icon, text, onClick}) => (
+    <span
+        className="btn btn-success"
         onClick={() => onClick && onClick()}
     >
-        <span className="text">
-            {text}
-        </span>
-    </button>
+            {
+                icon && (
+                    <i className={`ft-${icon}`}/>
+                )
+            }
+        <span>{text}</span>
+    </span>
 );
 
 Button.propTypes = {
+    icon: PropTypes.string,
     text: PropTypes.string.isRequired,
     onClick: PropTypes.func
 };

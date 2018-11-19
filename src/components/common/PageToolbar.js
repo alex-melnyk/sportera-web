@@ -9,11 +9,17 @@ const PageToolbar = ({actions}) => (
     <div className="settings-row">
         <Breadcrumbs/>
 
-        <div className="right-settings">
-            {actions}
-        </div>
-
-    </div>
+		<div className="right-settings">
+			{
+				actions.map((action) => (
+					<div className="settings-item">
+                        {action}
+					</div>
+				))
+			}
+		</div>
+		
+	</div>
 );
 
 export {PageToolbar};
