@@ -23,7 +23,7 @@ const TeamCard = () => (
 				</div>
 			</div>
         </Link>
-		<div class="card-data-wtap card-data-open">
+		<div className="card-data-wtap card-data-open">
 			<div className="card-data">
 				<ul className="team-card-list">
 					<li className="card-list-dropdown open">
@@ -44,7 +44,7 @@ const TeamCard = () => (
 						<div className="team-card-item">
 							<div className="flex-column">
 								<span>Расписание тренировок</span>
-								<div class="schedule">
+								<div className="schedule">
 									<div className="schedule-row">
 										<span>Понедельник</span>
 										<p>13:00 - 16:00 </p>

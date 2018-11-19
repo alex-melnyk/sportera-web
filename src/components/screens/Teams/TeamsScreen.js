@@ -19,25 +19,23 @@ class TeamsScreen extends Component {
     };
 
     actionButtonPressed = () => {
-        alert(i18n.t('not_implemented'))
+        this.setState({modalVisible: true});
     };
 
     renderLookToggle = () => (
         <div className="settings-item success-group-sm">
-            <a
-                href="#"
-                className="btn-sm btn-success active"
+            <span
+                className={`btn-sm btn-success ${this.state.look === LOOK.CARD && 'active'}`}
                 onClick={() => this.setLAFPressed(LOOK.CARD)}
             >
-                <i className="ft-block"></i>
-            </a>
-            <a
-                href="#"
-                className="btn-sm btn-success"
+                <i className="ft-block" />
+            </span>
+            <span
+                className={`btn-sm btn-success ${this.state.look === LOOK.LIST && 'active'}`}
                 onClick={() => this.setLAFPressed(LOOK.LIST)}
             >
-                <i className="ft-list-view"></i>
-            </a>
+                <i className="ft-list-view" />
+            </span>
         </div>
     );
 
@@ -55,7 +53,7 @@ class TeamsScreen extends Component {
                             <Button
                                 icon="plus"
                                 text="Создать Команду"
-                                onClick={() => this.setState({modalVisible: true})}
+                                onClick={this.actionButtonPressed}
                             />
                         )
                     ]}

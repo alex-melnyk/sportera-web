@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import {Breadcrumbs} from "./Breadcrumbs";
 
 import './PageToolbar.scss';
-import './Breadcrumbs.scss';
 import './Btns.scss';
-import {Breadcrumbs} from "./Breadcrumbs";
 
 const PageToolbar = ({actions}) => (
     <div className="settings-row">
@@ -11,8 +12,11 @@ const PageToolbar = ({actions}) => (
 
 		<div className="right-settings">
 			{
-				actions.map((action) => (
-					<div className="settings-item">
+				actions.map((action, index) => (
+					<div
+                        key={`page_toolbar_action_${index}`}
+                        className="settings-item"
+                    >
                         {action}
 					</div>
 				))
@@ -21,5 +25,13 @@ const PageToolbar = ({actions}) => (
 		
 	</div>
 );
+
+PageToolbar.propTypes = {
+    actions: PropTypes.array
+};
+
+PageToolbar.defaultProps = {
+    actions: []
+};
 
 export {PageToolbar};

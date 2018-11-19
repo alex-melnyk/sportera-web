@@ -17,13 +17,13 @@ const TeamCardSimple = () => (
 				<div className="main-info">
 					<h4>Феникс 2008</h4>
 					<div className="players">
-						<i className="ft-command"></i>
+						<i className="ft-command" />
 						<span>22</span>
 					</div>
 				</div>
 			</div>
         </Link>
-		<div class="card-data-wtap">
+		<div className="card-data-wtap">
 			<div className="card-data">
 				<ul className="team-card-list">
 					<li>
@@ -35,7 +35,7 @@ const TeamCardSimple = () => (
 								<p>Игорь Смолецкий</p>
 							</div>	
 							<div className="flex-column arrow-column">
-								<i className="ft-arrow-down-filled"></i>
+								<i className="ft-arrow-down-filled" />
 							</div>
 						</div>
 					</li>
@@ -43,7 +43,7 @@ const TeamCardSimple = () => (
 						<div className="team-card-item">
 							<div className="flex-column">
 								<span>Расписание тренировок</span>
-								<div class="schedule">
+								<div className="schedule">
 									<div className="schedule-row">
 										<span>Понедельник</span>
 										<p>13:00 - 16:00 </p>
@@ -67,7 +67,7 @@ const TeamCardSimple = () => (
 								</div>
 							</div>	
 							<div className="flex-column arrow-column">
-								<i className="ft-arrow-down-filled"></i>
+								<i className="ft-arrow-down-filled" />
 							</div>
 						</div>
 					</li>

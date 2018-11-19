@@ -4,6 +4,8 @@ import {withRouter} from "react-router-dom";
 
 import {NavigationRoutes} from "../../navigation";
 
+import './Breadcrumbs.scss';
+
 const Breadcrumbs = ({location}) => {
     const route = NavigationRoutes.find((route) => route.path === location.pathname);
 
