@@ -1,4 +1,5 @@
 export * from './Button';
+export * from './Breadcrumbs';
 export * from './Header';
 export * from './Sidebar';
 export * from './Icons';

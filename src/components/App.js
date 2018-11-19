@@ -2,11 +2,10 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {Route, Switch, withRouter} from "react-router-dom";
 
-import {Header, PageToolbar, Sidebar} from './common';
-import {DashboardScreen, TeamsInformationScreen} from "./screens";
+import {NavigationRoutes} from '../navigation';
+import {Header, Sidebar} from './common';
 
 import './App.scss';
-import {TeamsScreen} from "./screens/Teams/TeamsScreen";
 
 class App extends Component {
     state = {
@@ -31,21 +30,17 @@ class App extends Component {
                     <Sidebar collapsed={menuCollapsed}/>
                     <main className="main">
                         <Switch location={this.props.location}>
-                            <Route
-                                exact={true}
-                                path="/"
-                                component={DashboardScreen}
-                            />
-                            <Route
-                                exact={true}
-                                path="/teams"
-                                component={TeamsScreen}
-                            />
-                            <Route
-                                exact={true}
-                                path="/teams/information"
-                                component={TeamsInformationScreen}
-                            />
+                            {
+                                NavigationRoutes.map((route, index) => (
+                                    <Route
+                                        key={`route_${index}`}
+                                        {...route}
+                                        component={route.component ? route.component : () => (
+                                            <div><h3>{route.path}</h3></div>
+                                        )}
+                                    />
+                                ))
+                            }
                         </Switch>
                     </main>
                 </div>
