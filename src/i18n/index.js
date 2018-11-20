@@ -7,7 +7,7 @@ i18next.init({
         // React already does escaping
         escapeValue: false,
     },
-    lng: 'en', // 'ru' | 'uk'
+    lng: 'ru',
     resources: {
         en: {translation: Locales.en},
         ru: {translation: Locales.ru},

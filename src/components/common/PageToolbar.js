@@ -12,14 +12,10 @@ const PageToolbar = ({actions}) => (
 
         <div className="right-settings">
             {
-                actions.map((action, index) => (
-                    <div
-                        key={`page_toolbar_action_${index}`}
-                        className="settings-item"
-                    >
-                        {action}
-                    </div>
-                ))
+                actions.map((action, index) => ({
+                    ...action,
+                    key: `page_toolbar_action_${index}`
+                }))
             }
         </div>
 
