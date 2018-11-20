@@ -1,0 +1,27 @@
+@import "../../styles/General";
+
+.form-control {
+  @extend .d-flex;
+  @extend .align-items-center;
+  width: 100%;
+  @include px(10px);
+  @include py(5px);
+  min-height: 35px;
+  @include r(3px);
+  border: 1px solid $grey;
+  background-color: $white;
+  border: 1px solid $grey;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
+  line-height: 1.2;
+  color: $grey_text;
+  @include fz(14)
+  @include fw(600);
+  @include on;
+  @include pht($grey_text);
+  @include phs {
+    @include fw(500);
+  }
+  @include fc {
+    border-color: $success;
+  }
+}

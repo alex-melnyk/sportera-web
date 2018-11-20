@@ -9,6 +9,14 @@ p {
 	padding: 0;
 	line-height: 1.4;
 	@include selection($success_light);
+	&.fw400 {
+		font-weight: 400;
+	}
+}
+
+h3 {
+	@include fz(20)
+	color: $black;
 }	
 
 h4 {

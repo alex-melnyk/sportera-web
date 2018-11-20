@@ -1,0 +1,18 @@
+@import "../../styles/General";
+
+label {
+  @extend .d-inline-flex;
+  @include fz(14);
+  color: $grey_text;
+  position: relative;
+  color: $grey_text;
+  @extend .mb5;
+  &.required {
+    @include a {
+      content: '*';
+      @extend .d-inline-block;
+      color: $danger;
+    }
+  }
+}
+

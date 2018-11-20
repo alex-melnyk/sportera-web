@@ -1,0 +1,24 @@
+@import "../../styles/General";
+
+textarea {
+  resize: none;
+}
+
+.textarea-form {
+  height: 80px;
+/*  @include bigger {
+    height: 100px;
+  }
+  @include middle {
+    height: 200px;
+    +max767 {
+      height: 100px;
+    }
+  }
+  @include large {
+    height: 300px;
+    +max991 {
+      height: 200px
+    }
+  }*/
+}

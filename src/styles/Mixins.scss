@@ -511,6 +511,22 @@
 	}
 }
 
+// placeholder this
+@mixin phs {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+	&::placeholder {
+		@content;
+	}
+}
+
 // input styles
 @mixin inputOutline($name, $color, $bg, $border-color, $placeholder, $hoverBorder, $disabledBorder) {
 	
