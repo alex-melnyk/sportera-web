@@ -21,7 +21,7 @@ class CreateTeamModal extends Component {
     renderActionButtons = () => (
         <Button
             text={i18n.t('common_cta_save')}
-            onClick={() => this.props.onClose && this.props.onClose()}
+            onClick={this.props.onClose}
         />
     );
 
@@ -36,7 +36,7 @@ class CreateTeamModal extends Component {
                 visible={visible}
                 title={i18n.t('teams__list__modal_title')}
                 actions={this.renderActionButtons()}
-                onClose={() => onClose && onClose()}
+                onClose={onClose}
             >
                 <div className="bordered-box">
                     <div className="row">

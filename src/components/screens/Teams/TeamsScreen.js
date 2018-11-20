@@ -41,9 +41,47 @@ class TeamsScreen extends Component {
         </div>
     );
 
+    renderTeams = () => {
+        const {
+            look
+        } = this.state;
+
+        switch (look) {
+            case LOOK.CARD:
+                return (
+                    <div className="team-card-wrap grid-view">
+                        <TeamCard/>
+                        {
+                            Object.keys([...new Array(8)]).map((key) => (
+                                <TeamCardSimple
+                                    key={key}
+                                />
+                            ))
+                        }
+                        <TeamCard/>
+                    </div>
+                );
+            case LOOK.LIST:
+                return (
+                    <div className="team-card-wrap list-view">
+                        <TeamCard/>
+                        {
+                            Object.keys([...new Array(8)]).map((key) => (
+                                <TeamCardSimple
+                                    key={key}
+                                />
+                            ))
+                        }
+                        <TeamCard/>
+                    </div>
+                );
+            default:
+                return null;
+        }
+    };
+
     render() {
         const {
-            look,
             modalVisible
         } = this.state;
 
@@ -63,33 +101,9 @@ class TeamsScreen extends Component {
                         )
                     ]}
                 />
-                {
-                    look === LOOK.CARD ? (
-                        <div className="team-card-wrap grid-view">
-                            <TeamCard/>
-                            {
-                                Object.keys([...new Array(8)]).map((key) => (
-                                    <TeamCardSimple
-                                        key={key}
-                                    />
-                                ))
-                            }
-                            <TeamCard/>
-                        </div>
-                    ) : (
-                        <div className="team-card-wrap list-view">
-                            <TeamCard/>
-                            {
-                                Object.keys([...new Array(8)]).map((key) => (
-                                    <TeamCardSimple
-                                        key={key}
-                                    />
-                                ))
-                            }
-                            <TeamCard/>
-                        </div>
-                    )
-                }
+
+                {this.renderTeams()}
+
                 <CreateTeamModal
                     visible={modalVisible}
                     onClose={() => this.setState({modalVisible: false})}
