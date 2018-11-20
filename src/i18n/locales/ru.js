@@ -3,6 +3,8 @@ export default {
     click_me: 'Жми МЕНЯ!',
     not_implemented: 'Не реализовано',
 
+    common_cta_save: 'Сохранить',
+
     // SIDE BAR
     dashboard__sidebar_label: 'Дэшборд',
     teams__sidebar_label: 'Команды',

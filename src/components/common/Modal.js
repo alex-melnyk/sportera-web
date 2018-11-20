@@ -31,8 +31,6 @@ const Modal = ({children, visible, title, actions, onClose}) => {
                     </div>
                     <div className="modal-footer">
                         {actions}
-                        <Button text="Сохранить" />
-                        <Button text="Сохранить" />
                     </div>
                 </div>
             </div>

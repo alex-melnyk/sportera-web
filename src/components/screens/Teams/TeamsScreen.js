@@ -1,18 +1,9 @@
 import React, {Component} from 'react';
-import {
-    AddPhoto,
-    Button,
-    DropdownSelect,
-    InputRadio,
-    InputText,
-    Label,
-    Modal,
-    PageToolbar,
-    TeamCard,
-    TeamCardSimple
-} from "../../common";
+
+import {Button, PageToolbar, TeamCard, TeamCardSimple} from "../../common";
 
 import i18n from '../../../i18n';
+import {CreateTeamModal} from "../../modals";
 
 const LOOK = {
     CARD: 'CARD',
@@ -52,7 +43,8 @@ class TeamsScreen extends Component {
 
     render() {
         const {
-            look
+            look,
+            modalVisible
         } = this.state;
 
         return (
@@ -98,51 +90,10 @@ class TeamsScreen extends Component {
                         </div>
                     )
                 }
-                <Modal
-                    visible={this.state.modalVisible}
-                    title={i18n.t('teams__list__modal_title')}
-                    onClose={() => this.setState({
-                        modalVisible: false
-                    })}
-                >
-                    <div className="bordered-box">
-                        <div className="row">
-                            <div className="col-md-6">
-                                <AddPhoto/>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="form-group mb20">
-                                    <div className="d-block">
-                                        <Label/>
-                                    </div>
-                                    <div className="d-block">
-                                        <InputText/>
-                                    </div>
-                                </div>
-                                <div className="form-group mb15">
-                                    <div className="d-block">
-                                        <label className="">
-                                            Пол игроков
-                                        </label>
-                                    </div>
-                                    <div className="d-block">
-                                        <InputRadio/>
-                                    </div>
-                                </div>
-                                <div className="form-group mb20">
-                                    <div className="d-block">
-                                        <label className="">
-                                            Возраст игроков:
-                                        </label>
-                                    </div>
-                                    <div className="d-block">
-                                        <DropdownSelect/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </Modal>
+                <CreateTeamModal
+                    visible={modalVisible}
+                    onClose={() => this.setState({modalVisible: false})}
+                />
             </div>
 
         );
