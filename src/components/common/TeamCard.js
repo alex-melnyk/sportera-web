@@ -1,83 +1,117 @@
 import React, {Component} from 'react';
+import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
-
-import command1 from '../../assets/img/team/1.jpg';
 
 import './TeamCard.scss';
 
-const TeamCard = () => (
-    <div className="team-card">
-        <Link to="/teams/information">
-            <div className="card-logo">
-                <img
-                    src={command1}
-                    alt=""
-                    title=""
-                />
-                <div className="main-info">
-                    <h4>Феникс 2008</h4>
-                    <div className="players">
-                        <i className="ft-command"/>
-                        <span>22</span>
+class TeamCard extends Component {
+    state = {
+        trainersShow: false,
+        scheduleShow: false,
+    };
+
+    render() {
+        const {
+            trainersShow,
+            scheduleShow
+        } = this.state;
+
+        const {
+            name,
+            size,
+            photo,
+            trainers,
+            schedule
+        } = this.props;
+
+        return (
+            <div className="team-card">
+                <Link to="/teams/information">
+                    <div className="card-logo">
+                        <img
+                            src={photo}
+                            alt=""
+                            title=""
+                        />
+                        <div className="main-info">
+                            <h4>{name}</h4>
+                            <div className="players">
+                                <i className="ft-command"/>
+                                <span>{size}</span>
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+                <div className="card-data-wtap">
+                    <div className="card-data">
+                        <ul className="team-card-list">
+                            <li className={`card-list-dropdown ${trainersShow ? 'open' : ''}`}>
+                                <div className="team-card-item">
+                                    <div className="flex-column">
+                                        <span>Тренерa:</span>
+                                    </div>
+                                    <div className="flex-column">
+                                        {
+                                            trainers.map((trainer) => (
+                                                <p>{trainer}</p>
+                                            ))
+                                        }
+                                    </div>
+                                    <div
+                                        className="flex-column arrow-column"
+                                        onClick={() => this.setState(({trainersShow}) => ({trainersShow: !trainersShow}))}
+                                    >
+                                        <i className="ft-arrow-down-filled"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li className={`card-list-dropdown ${scheduleShow ? 'open' : ''}`}>
+                                <div className="team-card-item">
+                                    <div className="flex-column">
+                                        <span>Расписание тренировок</span>
+                                        <div className="schedule">
+                                            {
+                                                schedule.map((app) => (
+                                                    <div className="schedule-row">
+                                                        <span>{app.day}</span>
+                                                        <p>{app.from} - {app.till}</p>
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
+                                    </div>
+                                    <div
+                                        className="flex-column arrow-column"
+                                        onClick={() => this.setState(({scheduleShow}) => ({scheduleShow: !scheduleShow}))}
+                                    >
+                                        <i className="ft-arrow-down-filled"/>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </Link>
-        <div className="card-data-wtap card-data-open">
-            <div className="card-data">
-                <ul className="team-card-list">
-                    <li className="card-list-dropdown open">
-                        <div className="team-card-item">
-                            <div className="flex-column">
-                                <span>Тренерa:</span>
-                            </div>
-                            <div className="flex-column">
-                                <p>Игорь Смолецкий</p>
-                                <p>Василий Марченко</p>
-                            </div>
-                            <div className="flex-column arrow-column">
-                                <i className="ft-arrow-down-filled"/>
-                            </div>
-                        </div>
-                    </li>
-                    <li className="card-list-dropdown open">
-                        <div className="team-card-item">
-                            <div className="flex-column">
-                                <span>Расписание тренировок</span>
-                                <div className="schedule">
-                                    <div className="schedule-row">
-                                        <span>Понедельник</span>
-                                        <p>13:00 - 16:00 </p>
-                                    </div>
-                                    <div className="schedule-row">
-                                        <span>Вторник</span>
-                                        <p>12:00 - 15:00 </p>
-                                    </div>
-                                    <div className="schedule-row">
-                                        <span>Среда</span>
-                                        <p>10:00 - 16:00 </p>
-                                    </div>
-                                    <div className="schedule-row">
-                                        <span>Четверг</span>
-                                        <p>13:00 - 16:00 </p>
-                                    </div>
-                                    <div className="schedule-row">
-                                        <span>Пятница</span>
-                                        <p>12:00 - 15:00 </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex-column arrow-column">
-                                <i className="ft-arrow-down-filled"/>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+        );
+    }
+}
 
+TeamCard.propTypes = {
+    name: PropTypes.string,
+    size: PropTypes.number,
+    photo: PropTypes.string,
+    trainers: PropTypes.arrayOf(PropTypes.string),
+    schedule: PropTypes.arrayOf(PropTypes.shape({
+        day: PropTypes.string,
+        from: PropTypes.string,
+        till: PropTypes.string,
+    })),
 
-);
+};
+
+TeamCard.defaultProps = {
+    trainers: [],
+    schedule: []
+};
 
 export {TeamCard};

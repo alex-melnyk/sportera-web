@@ -5,6 +5,8 @@ import {Button, PageToolbar, TeamCard, TeamCardSimple} from "../../common";
 import i18n from '../../../i18n';
 import {CreateTeamModal} from "../../modals";
 
+import TeamPhoto from '../../../assets/img/team/1.jpg';
+
 const LOOK = {
     CARD: 'CARD',
     LIST: 'LIST'
@@ -50,29 +52,91 @@ class TeamsScreen extends Component {
             case LOOK.CARD:
                 return (
                     <div className="team-card-wrap grid-view">
-                        <TeamCard/>
                         {
                             Object.keys([...new Array(8)]).map((key) => (
-                                <TeamCardSimple
-                                    key={key}
+                                <TeamCard
+                                    photo={TeamPhoto}
+                                    name="Феникс 2018"
+                                    size={22}
+                                    trainers={[
+                                        'Игорь Смолецкий',
+                                        'Василий Марченко'
+                                    ]}
+                                    schedule={[
+                                        {
+                                            day: 'Понедельник',
+                                            from: '13:00',
+                                            till: '16:00'
+                                        },
+                                        {
+                                            day: 'Вторник',
+                                            from: '12:00',
+                                            till: '15:00'
+                                        },
+                                        {
+                                            day: 'Среда',
+                                            from: '10:00',
+                                            till: '16:00'
+                                        },
+                                        {
+                                            day: 'Четверг',
+                                            from: '13:00',
+                                            till: '16:00'
+                                        },
+                                        {
+                                            day: 'Пятница',
+                                            from: '12:00',
+                                            till: '15:00'
+                                        }
+                                    ]}
                                 />
                             ))
                         }
-                        <TeamCard/>
                     </div>
                 );
             case LOOK.LIST:
                 return (
                     <div className="team-card-wrap list-view">
-                        <TeamCard/>
                         {
                             Object.keys([...new Array(8)]).map((key) => (
-                                <TeamCardSimple
-                                    key={key}
+                                <TeamCard
+                                    photo={TeamPhoto}
+                                    name="Феникс 2018"
+                                    size={22}
+                                    trainers={[
+                                        "Игорь Смолецкий",
+                                        "Василий Марченко"
+                                    ]}
+                                    schedule={[
+                                        {
+                                            day: 'Понедельник',
+                                            from: '13:00',
+                                            till: '16:00'
+                                        },
+                                        {
+                                            day: 'Вторник',
+                                            from: '12:00',
+                                            till: '15:00'
+                                        },
+                                        {
+                                            day: 'Среда',
+                                            from: '10:00',
+                                            till: '16:00'
+                                        },
+                                        {
+                                            day: 'Четверг',
+                                            from: '13:00',
+                                            till: '16:00'
+                                        },
+                                        {
+                                            day: 'Пятница',
+                                            from: '12:00',
+                                            till: '15:00'
+                                        }
+                                    ]}
                                 />
                             ))
                         }
-                        <TeamCard/>
                     </div>
                 );
             default:
