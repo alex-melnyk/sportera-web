@@ -1,0 +1,82 @@
+@import "../../styles/General";
+
+.dropdown-select {
+  @extend .d-inline-flex;
+  @extend .flex-column;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  .dropdown-toggle {
+    @extend .d-flex;
+    @extend .align-items-center;
+    width: 100%;
+    @include px(10px);
+    @include py(5px);
+    min-height: 35px;
+    @include r(3px);
+    border: 1px solid $grey;
+    background-color: $white;
+    border: 1px solid $grey;
+    line-height: 1.2;
+    color: $grey_text;
+    @include fz(14)
+    @include fw(600);
+    @include on;
+    @include a {
+      content: '\E801';
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      right: 15px;
+      margin-top: -2px;
+      font-family: "ft";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      text-decoration: inherit;
+      text-align: center;
+      font-variant: normal;
+      text-transform: none;
+      margin-left: 0;
+      @include fz(6);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: $grey_text;
+    }
+    @include fc {
+      border-color: $success;
+    }
+
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    @include r(3px);
+    border: 1px solid $grey;
+    background-color: $white;
+    .dropdown-item {
+      @extend .d-flex;
+      @extend .align-items-center;
+      width: 100%;
+      min-height: 35px;
+      @include px(10px);
+      @include fw(500);
+      @include fz(14)
+      @include f {
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+      }
+      @include l {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+      @include h {
+        background-color: $light_grey_bg;
+      }
+    }
+  }
+}

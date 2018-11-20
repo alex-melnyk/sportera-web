@@ -1,55 +1,93 @@
 /*margin-top*/
 .mt0 {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 .mt20 {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 /*margin-right*/
 .mr0 {
-	margin-right: 0;
+  margin-right: 0;
 }
 
 .mr20 {
-	margin-right: 20px;
+  margin-right: 20px;
 }
 
 .mr-auto {
-	margin-right: auto !important;
+  margin-right: auto !important;
 }
 
 /*margin-bottom*/
 .mb0 {
-	margin-bottom: 0;
+  margin-bottom: 0;
+}
+
+.mb5 {
+  margin-bottom: 5px;
 }
 
 .mb10 {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .mb20 {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.mb15 {
+  margin-bottom: 15px;
 }
 
 /*margin-left*/
 .ml0 {
-	margin-left: 0;
+  margin-left: 0;
 }
 
 .ml10 {
-	margin-left: 10px;
+  margin-left: 10px;
 }
 
 .ml20 {
-	margin-left: 20px;
+  margin-left: 20px;
 }
 
 .ml25 {
-	margin-left: 25px;
+  margin-left: 25px;
 }
 
 .ml-auto {
-	margin-left: auto !important;
+  margin-left: auto !important;
+}
+
+
+.row {
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  position: relative;
+  @extend .d-flex;
+  @extend .flex-wrap;
+  @include mx(-10px);
+  @include b {
+    @include ct;
+    clear: both;
+  }
+}
+
+.col-md-6 {
+  @include px(10px);
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+  position: relative;
+  min-height: 1px;
+  @include min768 {
+    width: 50%;
+  }
 }

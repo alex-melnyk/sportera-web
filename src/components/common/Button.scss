@@ -6,7 +6,7 @@
   @extend .justify-content-center;
   @extend .align-items-center;
   @include py(7px);
-  @include fz(16);
+  @include fz(14);
   line-height: 1.2;
   outline: none;
   border: 1px solid;
@@ -26,9 +26,16 @@
 .btn {
   @include px(10px);
   min-width: 160px;
-  @include tm;
   i {
     @include fz(12)
+    + span {
+      margin-left: 5px;
+    }
+  }
+  span {
+    + i {
+      margin-left: 5px;
+    }
   }
   @include h {
     @include tm;
@@ -46,6 +53,7 @@
 .btn-success {
   background-color: $success;
   border-color: $success;
+  color: $white;
   @include h {
     background-color: darken($success, 3%);
   }
@@ -55,8 +63,5 @@
   * {
     color: $white;
   }
-  span {
-    @include fz(14);
-    margin-left: 5px;
-  }
 }
+

@@ -1,0 +1,7 @@
+@import "../../styles/General.scss";
+
+.modal-close {
+  @include fz(12);
+  @extend .d-flex;
+  color: $grey_text;
+}
