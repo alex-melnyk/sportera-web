@@ -1,7 +1,5 @@
 import React from 'react';
 
-import {Button} from "./Button";
-
 import './Modal.scss';
 
 const Modal = ({children, visible, title, actions, onClose}) => {
