@@ -13,8 +13,8 @@ class App extends Component {
     };
 
     toggleMenuPressed = () => {
-        this.setState(({menuCollapsed}) => ({
-            sidebarCollapsed: !menuCollapsed
+        this.setState(({sidebarCollapsed}) => ({
+            sidebarCollapsed: !sidebarCollapsed
         }));
     };
 
