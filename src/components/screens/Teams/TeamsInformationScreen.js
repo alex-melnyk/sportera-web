@@ -7,7 +7,7 @@ class TeamsInformationScreen extends Component {
     render() {
         return (
             <div>
-                <PageToolbar />
+                <PageToolbar/>
 
                 <Link to="/teams">
                     TO TEAMS

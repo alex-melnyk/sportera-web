@@ -27,7 +27,7 @@
   @include px(15px);
   /*min-width: 160px;*/
   i {
-    @include fz(12)
+    @include fz(12);
     + span {
       margin-left: 5px;
     }
@@ -50,7 +50,7 @@
   width: 35px;
 }
 
-.btn-success {
+.btn-primary {
   background-color: $success;
   border-color: $success;
   color: $white;
@@ -59,6 +59,21 @@
   }
   @include fc {
     background-color: darken($success, 5%);
+  }
+  * {
+    color: $white;
+  }
+}
+
+.btn-secondary {
+  background-color: $grey;
+  border-color: $grey;
+  color: $white;
+  @include h {
+    background-color: darken($grey, 3%);
+  }
+  @include fc {
+    background-color: darken($grey, 5%);
   }
   * {
     color: $white;

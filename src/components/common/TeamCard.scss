@@ -1,260 +1,260 @@
 @import "../../styles/General.scss";
 
 .team-card-wrap {
-	@include mx(-5px);
-	@include min1366 {
-		@include mx(-10px);
-	}
+  @include mx(-5px);
+  @include min1366 {
+    @include mx(-10px);
+  }
 }
 
 .team-card {
-	@include mx(5px);
-		@extend .mb10;
-	@include min1366 {
-		@include mx(10px);
-		margin-bottom: 20px;
-	}
-	.card-logo {
-		@extend .d-block;
-		width: 100%;
-		position: relative;
-		overflow: hidden;
-		z-index: 0;
-		border-top-right-radius: 5px;
-		border-top-left-radius: 5px;
-		overflow: hidden;
-		@include b {
-			@include ct;
-		}
-		@include a {
-			@include ct;
-			position: absolute;
-			top: 50%;
-			bottom: 0;
-			right: 0;
-			left: 0;
-			z-index: 2;
-			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
-		}
-		img {
-			position: absolute;
-			z-index: 1;
-			display: block;
-			top: 50%;
-			left: 50%;
-			width: 100%;
-			@include tf(translate(-50%, -50%));
-		}
+  @include mx(5px);
+  @extend .mb10;
+  @include min1366 {
+    @include mx(10px);
+    margin-bottom: 20px;
+  }
+  .card-logo {
+    @extend .d-block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    overflow: hidden;
+    @include b {
+      @include ct;
+    }
+    @include a {
+      @include ct;
+      position: absolute;
+      top: 50%;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 2;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    }
+    img {
+      position: absolute;
+      z-index: 1;
+      display: block;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      @include tf(translate(-50%, -50%));
+    }
 
-	}
-	.players {
-		i {
-			@include fz(12);
-			margin-right: 10px;
-		}
-		span {
-			@include fz(14);
-			@include fw(600);
-		}
-	}
+  }
+  .players {
+    i {
+      @include fz(12);
+      margin-right: 10px;
+    }
+    span {
+      @include fz(14);
+      @include fw(600);
+    }
+  }
 }
 
 .team-card-item {
-	@include fc {
-		outline: none;
-		-webkit-box-shadow: none;
-		box-shadow: none;
-	}
+  @include fc {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
 }
 
 .grid-view {
-	.team-card {
-		@extend .d-inline-flex;
-		@extend .flex-column;
-		@extend .justify-content-between;
-		min-width: 266px;
-		width: calc(20% - 10px);
-		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-		@include r(5px);
-		@include min1366 {
-			width: calc(20% - 20px);
-		}
-		@include max1365 {
-			min-width: 1px;
-			width: calc(25% - 10px);
-			float: left;
-		}
-		@include max1199 {
-			width: calc(33.33% - 10px);
-			float: left;
-		}
-		@include max991 {
-			width: calc(50% - 10px);
-			float: left;
-		}
-		@include max767 {
-			width: calc(100% - 10px);
-			max-width: 270px;
-			margin-right: auto;
-			margin-left: auto;
-			float: left;
-		}
-		.card-logo {
-			@include b {
-				padding-top: 56%;
-				background-color: $light_grey_bg;
-			}
+  .team-card {
+    @extend .d-inline-flex;
+    @extend .flex-column;
+    @extend .justify-content-between;
+    min-width: 266px;
+    width: calc(20% - 10px);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    @include r(5px);
+    @include min1366 {
+      width: calc(20% - 20px);
+    }
+    @include max1365 {
+      min-width: 1px;
+      width: calc(25% - 10px);
+      float: left;
+    }
+    @include max1199 {
+      width: calc(33.33% - 10px);
+      float: left;
+    }
+    @include max991 {
+      width: calc(50% - 10px);
+      float: left;
+    }
+    @include max767 {
+      width: calc(100% - 10px);
+      max-width: 270px;
+      margin-right: auto;
+      margin-left: auto;
+      float: left;
+    }
+    .card-logo {
+      @include b {
+        padding-top: 56%;
+        background-color: $light_grey_bg;
+      }
 
-		}
-		.main-info {
-			position: absolute;
-			z-index: 3;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			padding-bottom: 9px;
-			@include px(15px)
-			@extend .d-flex;
-			@extend .justify-content-between;
-			@extend .align-items-baseline;
-			* {
-				color: $white;
-			}
-		}
-		.players {
-			@extend .d-flex;
-			@extend .align-items-baseline;
-		}
-		.card-data-wtap {
-			@extend .d-block;
-			height: 95px;
-			border-bottom-right-radius: 5px;
-			border-bottom-left-radius: 5px;
-			overflow: hidden;
-			position: relative;
-			&.card-data-open {
-				overflow: visible;
-				.card-data {
-					position: absolute;
-					z-index: 5;
-					top: 0;
-					right: 0;
-					left: 0;
-					box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.55);
-				}
-			}
-		}
-		.card-data {
-			position: relative;
-			@extend .d-block;
-			border-bottom-right-radius: 5px;
-			border-bottom-left-radius: 5px;
-			background-color: $white;
-		}
+    }
+    .main-info {
+      position: absolute;
+      z-index: 3;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding-bottom: 9px;
+      @include px(15px)
+      @extend .d-flex;
+      @extend .justify-content-between;
+      @extend .align-items-baseline;
+      * {
+        color: $white;
+      }
+    }
+    .players {
+      @extend .d-flex;
+      @extend .align-items-baseline;
+    }
+    .card-data-wtap {
+      @extend .d-block;
+      height: 95px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      overflow: hidden;
+      position: relative;
+      &.card-data-open {
+        overflow: visible;
+        .card-data {
+          position: absolute;
+          z-index: 5;
+          top: 0;
+          right: 0;
+          left: 0;
+          box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.55);
+        }
+      }
+    }
+    .card-data {
+      position: relative;
+      @extend .d-block;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background-color: $white;
+    }
 
-		.team-card-list {
-			padding: 0;
-			margin: 0;
-			width: 100%;
-			li {
-				@include l {
-					.team-card-item {
-						border-bottom: none;
-					}
-				}
-			}
-		}
-		.team-card-item {
-			@extend .d-flex;
-			@extend .align-items-flex-start;
-			min-height: 48px;
-			width: 100%;
-			border-bottom: 1px solid $grey;
-			@include px(15px);
-			padding-top: 15px;
-			padding-bottom: 12px;
-			text-decoration: none;
-			p, span {
-				@extend .d-block;
-				margin-bottom: 0;
-			}
-			span {
-				color: $grey_text;
-				margin-right: 5px;
-			}
-			p {
-				color: $black;
-			}
-		}
-		.open {
-			.team-card-item {
-				p {
-					margin-bottom: 5px;
-					@include l {
-						margin-bottom: 0;
-					}
-				}
-			}
-		}
+    .team-card-list {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      li {
+        @include l {
+          .team-card-item {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+    .team-card-item {
+      @extend .d-flex;
+      @extend .align-items-flex-start;
+      min-height: 48px;
+      width: 100%;
+      border-bottom: 1px solid $grey;
+      @include px(15px);
+      padding-top: 15px;
+      padding-bottom: 12px;
+      text-decoration: none;
+      p, span {
+        @extend .d-block;
+        margin-bottom: 0;
+      }
+      span {
+        color: $grey_text;
+        margin-right: 5px;
+      }
+      p {
+        color: $black;
+      }
+    }
+    .open {
+      .team-card-item {
+        p {
+          margin-bottom: 5px;
+          @include l {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
 
-	}
-	.arrow-column {
-		@extend .d-none;
-		@extend .ml-auto;
-		i {
-			@include fz(6);
-			line-height: 18px;
-			color: $grey_text;
-		}
-	}
-	.card-list-dropdown {
-		.arrow-column {
-			@extend .d-inline-flex;
-		}
-		&.open {
-			.ft-arrow-down-filled {
-				@include b {
-					content: '\e805';
-				}
-			}
-			.schedule {
-				@extend .d-flex;
-			}
-		}
-	}
-	.schedule {
-		@extend .d-none;
-		@extend .flex-wrap;
-		padding-top: 5px;
-		.schedule-row {
-			@extend .d-flex;
-			@extend .align-items-center;
-			@extend .flex-row;
-			width: 100%;
-			span {
-				line-height: 1.5;
-				@include f {
-					width: 105px;
-					@include fw(500);
-				}
-			}
-		}
-	}
+  }
+  .arrow-column {
+    @extend .d-none;
+    @extend .ml-auto;
+    i {
+      @include fz(6);
+      line-height: 18px;
+      color: $grey_text;
+    }
+  }
+  .card-list-dropdown {
+    .arrow-column {
+      @extend .d-inline-flex;
+    }
+    &.open {
+      .ft-arrow-down-filled {
+        @include b {
+          content: '\e805';
+        }
+      }
+      .schedule {
+        @extend .d-flex;
+      }
+    }
+  }
+  .schedule {
+    @extend .d-none;
+    @extend .flex-wrap;
+    padding-top: 5px;
+    .schedule-row {
+      @extend .d-flex;
+      @extend .align-items-center;
+      @extend .flex-row;
+      width: 100%;
+      span {
+        line-height: 1.5;
+        @include f {
+          width: 105px;
+          @include fw(500);
+        }
+      }
+    }
+  }
 }
 
 .team-card-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .list-view {
-	.team-card {
-		.card-logo {
-			@include b {
-			}
+  .team-card {
+    .card-logo {
+      @include b {
+      }
 
-		}
-	}
+    }
+  }
 }
 

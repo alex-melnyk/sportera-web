@@ -1,663 +1,663 @@
 @mixin fw($value) {
-	font-weight: $value;
+  font-weight: $value;
 }
 
 @mixin r($radius) {
-	border-radius: $radius;
+  border-radius: $radius;
 }
 
 @mixin hf {
-	&:hover, &:focus {
-		@content;
-	}
+  &:hover, &:focus {
+    @content;
+  }
 }
 
 @mixin h {
-	&:hover {
-		@content;
-	}
+  &:hover {
+    @content;
+  }
 }
 
 @mixin fc {
-	&:focus {
-		@content;
-	}
+  &:focus {
+    @content;
+  }
 }
 
 @mixin in {
-	display: inline-block;
-	vertical-align: top;
+  display: inline-block;
+  vertical-align: top;
 }
 
 @mixin im {
-	display: inline-block;
-	vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 @mixin ts($transition) {
-	-webkit-transition: $transition;
-	transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
 }
 
 @mixin ct {
-	content: '';
-	display: block;
+  content: '';
+  display: block;
 }
 
 @mixin ln($colors) {
-	background: -webkit-linear-gradient($colors);
-	background: linear-gradient($colors);
+  background: -webkit-linear-gradient($colors);
+  background: linear-gradient($colors);
 }
 
 @mixin lnl($colors) {
-	background: -webkit-linear-gradient(left, $colors);
-	background: linear-gradient(to right, $colors);
+  background: -webkit-linear-gradient(left, $colors);
+  background: linear-gradient(to right, $colors);
 }
 
 @mixin lnr($colors) {
-	background: -webkit-linear-gradient(right, $colors);
-	background: linear-gradient(to left, $colors);
+  background: -webkit-linear-gradient(right, $colors);
+  background: linear-gradient(to left, $colors);
 }
 
 @mixin radial($color1, $color2) {
-	background-image: $color2;
-	background-image: -webkit-radial-gradient($color1, $color2);
-	background-image: radial-gradient($color1, $color2);
+  background-image: $color2;
+  background-image: -webkit-radial-gradient($color1, $color2);
+  background-image: radial-gradient($color1, $color2);
 }
 
 @mixin tf($value) {
-	-webkit-transform: $value;
-	-ms-transform: $value;
-	transform: $value;
+  -webkit-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
 }
 
 @mixin tm {
-	@include ts(all 0.2s ease-out);
+  @include ts(all 0.2s ease-out);
 }
-
 
 // dots when text is longer than element
 @mixin dots {
-	display: block;
-	max-width: 100%;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 @mixin mxa {
-	margin-right: auto;
-	margin-left: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 // horizontally centered element
 @mixin hc {
-	display: block;
-	margin-right: auto;
-	margin-left: auto;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @mixin act {
-	&:active,
-	&.active {
-		@content;
-	}
+  &:active,
+  &.active {
+    @content;
+  }
 }
+
 // all but not last
 @mixin nl {
-	&:not(:last-child) {
-		@content;
-	}
+  &:not(:last-child) {
+    @content;
+  }
 }
 
 // all but not first
 @mixin nf {
-	&:not(:first-child) {
-		@content;
-	}
+  &:not(:first-child) {
+    @content;
+  }
 }
 
 // this last child
 @mixin l {
-	&:last-child {
-		@content;
-	}
+  &:last-child {
+    @content;
+  }
 }
 
 // this first child
 @mixin f {
-	&:first-child {
-		@content;
-	}
+  &:first-child {
+    @content;
+  }
 }
 
 // in this last item
 @mixin li {
-	*:last-child {
-		@content;
-	}
+  *:last-child {
+    @content;
+  }
 }
 
 // in this first item
 @mixin fi {
-	*:first-child {
-		@content;
-	}
+  *:first-child {
+    @content;
+  }
 }
 
 @mixin abs0 {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 // BREAKPOINTS
 
 @mixin min1921 {
-	@media print, screen and (min-width: 1921px) {
-		@content;
-	}
+  @media print, screen and (min-width: 1921px) {
+    @content;
+  }
 }
 
 @mixin min1600 {
-	@media print, screen and (min-width: 1600px) {
-		@content;
-	}
+  @media print, screen and (min-width: 1600px) {
+    @content;
+  }
 }
 
 @mixin min1200 {
-	@media print, screen and (min-width: 1200px) {
-		@content;
-	}
+  @media print, screen and (min-width: 1200px) {
+    @content;
+  }
 }
 
 @mixin min1024 {
-	@media print, screen and (min-width: 1024px) {
-		@content;
-	}
+  @media print, screen and (min-width: 1024px) {
+    @content;
+  }
 }
 
 @mixin min992 {
-	@media print, screen and (min-width: 992px) {
-		@content;
-	}
+  @media print, screen and (min-width: 992px) {
+    @content;
+  }
 }
 
 @mixin min768 {
-	@media print, screen and (min-width: 768px) {
-		@content;
-	}
+  @media print, screen and (min-width: 768px) {
+    @content;
+  }
 }
 
 @mixin min640 {
-	@media print, screen and (min-width: 640px) {
-		@content;
-	}
+  @media print, screen and (min-width: 640px) {
+    @content;
+  }
 }
 
 @mixin min576 {
-	@media print, screen and (min-width: 576px) {
-		@content;
-	}
+  @media print, screen and (min-width: 576px) {
+    @content;
+  }
 }
 
 @mixin max1365 {
-	@media print, screen and (max-width: 1365px) {
-		@content;
-	}
+  @media print, screen and (max-width: 1365px) {
+    @content;
+  }
 }
 
 @mixin max1199 {
-	@media print, screen and (max-width: 1199px) {
-		@content;
-	}
+  @media print, screen and (max-width: 1199px) {
+    @content;
+  }
 }
 
 @mixin max1023 {
-	@media print, screen and (max-width: 1023px) {
-		@content;
-	}
+  @media print, screen and (max-width: 1023px) {
+    @content;
+  }
 }
 
 @mixin max991 {
-	@media print, screen and (max-width: 991px) {
-		@content;
-	}
+  @media print, screen and (max-width: 991px) {
+    @content;
+  }
 }
 
 @mixin max767 {
-	@media print, screen and (max-width: 767px) {
-		@content;
-	}
+  @media print, screen and (max-width: 767px) {
+    @content;
+  }
 }
 
 @mixin max639 {
-	@media print, screen and (max-width: 639px) {
-		@content;
-	}
+  @media print, screen and (max-width: 639px) {
+    @content;
+  }
 }
 
 @mixin max575 {
-	@media print, screen and (max-width: 575px) {
-		@content;
-	}
+  @media print, screen and (max-width: 575px) {
+    @content;
+  }
 }
 
 @mixin max376 {
-	@media print, screen and (max-width: 376px) {
-		@content;
-	}
+  @media print, screen and (max-width: 376px) {
+    @content;
+  }
 }
 
 @mixin max370 {
-	@media print, screen and (max-width: 370px) {
-		@content;
-	}
+  @media print, screen and (max-width: 370px) {
+    @content;
+  }
 }
 
 @mixin min1366 {
-	@media print, screen and (min-width: 1366px) {
-		@content;
-	}
+  @media print, screen and (min-width: 1366px) {
+    @content;
+  }
 }
 
-
 @mixin min768-max1199 {
-	@media print, screen and (min-width: 768px) and (max-width: 1199px) {
-		@content;
-	}
-}		
+  @media print, screen and (min-width: 768px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
 /*(min-width: 768px) and (max-width: 1199px) END*/
 
 @mixin min992-max1199 {
-	@media print, screen and (min-width: 992px) and (max-width: 1199px) {
-		@content;
-	}
+  @media print, screen and (min-width: 992px) and (max-width: 1199px) {
+    @content;
+  }
 }
+
 /*(min-width: 992px) and (max-width: 1199px) END*/
 
 @mixin min768-max991 {
-	@media print, screen and (min-width: 768px) and (max-width: 991px) {
-		@content;
-	}
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
 }
+
 /*(min-width: 768px) and (max-width: 991px) END*/
 
 @mixin min768-max1199 {
-	@media print, screen and (min-width: 768px) and (max-width: 1199px) {
-		@content;	
-	}
+  @media print, screen and (min-width: 768px) and (max-width: 1199px) {
+    @content;
+  }
 }
+
 /*(min-width: 768px) and (max-width: 1199px) END*/
 
 @mixin min640-max1023 {
-	@media print, screen and (min-width: 640px) and (max-width: 1023px) {
-		@content;
-	}
+  @media print, screen and (min-width: 640px) and (max-width: 1023px) {
+    @content;
+  }
 }
 
 /*(min-height: 1070px) and (mmin-width: 1300px) END*/
 
 @mixin minh1081 {
-	@media print, screen and (min-height: 1081px) {
-		@content;
-	}
+  @media print, screen and (min-height: 1081px) {
+    @content;
+  }
 }
-/*(min-height: 1070px) and (mmin-width: 1300px) END*/
 
+/*(min-height: 1070px) and (mmin-width: 1300px) END*/
 
 // selected text properties
 @mixin selection($color) {
-	::moz-selection {
-	    background: $color;
-	}
+  ::moz-selection {
+    background: $color;
+  }
 
-	::selection {
-	    background: $color;
-	}
+  ::selection {
+    background: $color;
+  }
 }
 
 @mixin fz($font-size) {
-	/*#{$font-size}px*/
-	font-size: $font-size + px;
+  /*#{$font-size}px*/
+  font-size: $font-size + px;
 }
 
 @mixin keys($name) {
-	@-webkit-keyframes #{$name} {
-		@content;
-	}
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
 
-	@keyframes #{$name} {
-		@content;
-	}
+  @keyframes #{$name} {
+    @content;
+  }
 }
 
 @mixin nw {
-	white-space: nowrap
+  white-space: nowrap
 }
 
 // BUTTONS
 @mixin btn($name, $color, $bgColor, $bgHover) {
 
-	.btn-#{$name} {
-		color: $color;
-		background-color: $bgColor;
-		border-color: $bgColor!important;
-		@include tm;
-	}
+  .btn-#{$name} {
+    color: $color;
+    background-color: $bgColor;
+    border-color: $bgColor !important;
+    @include tm;
+  }
 
-	.btn-#{$name}:hover {
-		color: $color;
-		background-color: $bgHover;
-		border-color: $bgHover!important;
-		box-shadow: none!important;
-		outline: none!important;
-		@include tm;
-	}
+  .btn-#{$name}:hover {
+    color: $color;
+    background-color: $bgHover;
+    border-color: $bgHover !important;
+    box-shadow: none !important;
+    outline: none !important;
+    @include tm;
+  }
 
-	.btn-#{$name}:focus,
-	.btn-#{$name}.focus,
-	.btn-#{$name}:active,
-	.btn-#{$name}.active,
-	.show > .btn-#{$name}.dropdown-toggle,
-	.btn-#{$name}:active:hover,
-	.btn-#{$name}:active:focus,
-	.btn-#{$name}:active.focus,
-	.btn-#{$name}.active:hover,
-	.btn-#{$name}.active:focus,
-	.btn-#{$name}.active.focus,
-	.show > .btn-#{$name}.dropdown-toggle:hover,
-	.show > .btn-#{$name}.dropdown-toggle:focus,
-	.show > .btn-#{$name}.dropdown-toggle.focus {
-		color: $color!important	;
-		background-color: $bgHover;
-		border-color: $bgHover!important;
-		box-shadow: none!important;
-		outline: none!important;
-		@include tm;
-	}
+  .btn-#{$name}:focus,
+  .btn-#{$name}.focus,
+  .btn-#{$name}:active,
+  .btn-#{$name}.active,
+  .show > .btn-#{$name}.dropdown-toggle,
+  .btn-#{$name}:active:hover,
+  .btn-#{$name}:active:focus,
+  .btn-#{$name}:active.focus,
+  .btn-#{$name}.active:hover,
+  .btn-#{$name}.active:focus,
+  .btn-#{$name}.active.focus,
+  .show > .btn-#{$name}.dropdown-toggle:hover,
+  .show > .btn-#{$name}.dropdown-toggle:focus,
+  .show > .btn-#{$name}.dropdown-toggle.focus {
+    color: $color !important;
+    background-color: $bgHover;
+    border-color: $bgHover !important;
+    box-shadow: none !important;
+    outline: none !important;
+    @include tm;
+  }
 
-	.btn-#{$name}.disabled:focus,
-	.btn-#{$name}.disabled.focus,
-	.btn-#{$name}:disabled:focus,
-	.btn-#{$name}:disabled.focus {
-		background-color: $bgColor;
-		border-color: $bgColor;
-		box-shadow: none!important;
-		outline: none!important;
-		@include tm;
-	}
+  .btn-#{$name}.disabled:focus,
+  .btn-#{$name}.disabled.focus,
+  .btn-#{$name}:disabled:focus,
+  .btn-#{$name}:disabled.focus {
+    background-color: $bgColor;
+    border-color: $bgColor;
+    box-shadow: none !important;
+    outline: none !important;
+    @include tm;
+  }
 
-	.btn-#{$name}.disabled:hover,
-	.btn-#{$name}:disabled:hover {
-		background-color: $bgColor;
-		border-color: $bgColor;
-		box-shadow: none!important;
-		outline: none!important;
-		@include tm;
-	}
+  .btn-#{$name}.disabled:hover,
+  .btn-#{$name}:disabled:hover {
+    background-color: $bgColor;
+    border-color: $bgColor;
+    box-shadow: none !important;
+    outline: none !important;
+    @include tm;
+  }
 }
 
 // BOOTSTRAP OUTLINE BUTTON
 @mixin btnOutline($name, $color, $bg, $border, $hoverColor, $hoverBg, $hoverBorder) {
-	
-	.btn-outline-#{$name} {
-		color: $color!important;
-		background-image: none;
-		background-color: $bg;
-		border-color: $border!important;
-	}
 
-	.btn-outline-#{$name}:hover {
-		color: $color!important;
-		background-image: none;
-		background-color: $bg;
-		border-color: $border!important;
-		box-shadow: none!important;
-		outline: none!important;
-	}
+  .btn-outline-#{$name} {
+    color: $color !important;
+    background-image: none;
+    background-color: $bg;
+    border-color: $border !important;
+  }
 
+  .btn-outline-#{$name}:hover {
+    color: $color !important;
+    background-image: none;
+    background-color: $bg;
+    border-color: $border !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
 
-	.btn-outline-#{$name}:focus,
-	.btn-outline-#{$name}.focus {
-		color: $hoverColor!important;
-		background-color: $hoverBg!important;
-		border-color: $hoverBorder!important;
-		box-shadow: none!important;
-		outline: none!important;
-	}
+  .btn-outline-#{$name}:focus,
+  .btn-outline-#{$name}.focus {
+    color: $hoverColor !important;
+    background-color: $hoverBg !important;
+    border-color: $hoverBorder !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
 
-	.btn-outline-#{$name}:active,
-	.btn-outline-#{$name}.active,
-	.show > .btn-outline-#{$name}.dropdown-toggle {
-		color: $hoverColor!important;
-		background-color: $hoverBg!important;
-		border-color: $hoverBorder!important;
-		box-shadow: none!important;
-		outline: none!important;
-	}
+  .btn-outline-#{$name}:active,
+  .btn-outline-#{$name}.active,
+  .show > .btn-outline-#{$name}.dropdown-toggle {
+    color: $hoverColor !important;
+    background-color: $hoverBg !important;
+    border-color: $hoverBorder !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
 
-	.btn-outline-#{$name}:active:hover,
-	.btn-outline-#{$name}:active:focus,
-	.btn-outline-#{$name}:active.focus,
-	.btn-outline-#{$name}.active:hover,
-	.btn-outline-#{$name}.active:focus,
-	.btn-outline-#{$name}.active.focus,
-	.show > .btn-outline-#{$name}.dropdown-toggle:hover,
-	.show > .btn-outline-#{$name}.dropdown-toggle:focus,
-	.show > .btn-outline-#{$name}.dropdown-toggle.focus {
-		color: $hoverColor!important;
-		background-color: $hoverBg!important;
-		border-color: $hoverBorder!important;
-		box-shadow: none!important;
-		outline: none!important;
-	}
+  .btn-outline-#{$name}:active:hover,
+  .btn-outline-#{$name}:active:focus,
+  .btn-outline-#{$name}:active.focus,
+  .btn-outline-#{$name}.active:hover,
+  .btn-outline-#{$name}.active:focus,
+  .btn-outline-#{$name}.active.focus,
+  .show > .btn-outline-#{$name}.dropdown-toggle:hover,
+  .show > .btn-outline-#{$name}.dropdown-toggle:focus,
+  .show > .btn-outline-#{$name}.dropdown-toggle.focus {
+    color: $hoverColor !important;
+    background-color: $hoverBg !important;
+    border-color: $hoverBorder !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
 
-	.btn-outline-#{$name}.disabled:focus,
-	.btn-outline-#{$name}.disabled.focus,
-	.btn-outline-#{$name}:disabled:focus,
-	.btn-outline-#{$name}:disabled.focus {
-		color: $hoverColor!important;
-		background-color: $hoverBg!important;
-		border-color: $hoverBorder!important;
-		box-shadow: none!important;
-		outline: none!important;
-	}
+  .btn-outline-#{$name}.disabled:focus,
+  .btn-outline-#{$name}.disabled.focus,
+  .btn-outline-#{$name}:disabled:focus,
+  .btn-outline-#{$name}:disabled.focus {
+    color: $hoverColor !important;
+    background-color: $hoverBg !important;
+    border-color: $hoverBorder !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
 
-	.btn-outline-#{$name}.disabled:hover,
-	.btn-outline-#{$name}:disabled:hover {
-		color: $hoverColor!important;
-		background-color: $hoverBg!important;
-		border-color: $hoverBorder!important;
-		box-shadow: none!important;
-		outline: none!important;
-	}
+  .btn-outline-#{$name}.disabled:hover,
+  .btn-outline-#{$name}:disabled:hover {
+    color: $hoverColor !important;
+    background-color: $hoverBg !important;
+    border-color: $hoverBorder !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
 }
 
 // placeholder
 @mixin ph($color) {
-	input,
-	textarea {
-		&::-webkit-input-placeholder {
-			color: $color;
-		}
-		&::-moz-placeholder {
-			color: $color;
-		}
-		&:-ms-input-placeholder {
-			color: $color;
-		}
-		&::placeholder {
-			color: $color;
-		}
-	}
+  input,
+  textarea {
+    &::-webkit-input-placeholder {
+      color: $color;
+    }
+    &::-moz-placeholder {
+      color: $color;
+    }
+    &:-ms-input-placeholder {
+      color: $color;
+    }
+    &::placeholder {
+      color: $color;
+    }
+  }
 }
 
 // placeholder this
 @mixin pht($color) {
-	&::-webkit-input-placeholder {
-		color: $color;
-	}
-	&::-moz-placeholder {
-		color: $color;
-	}
-	&:-ms-input-placeholder {
-		color: $color;
-	}
-	&::placeholder {
-		color: $color;
-	}
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::placeholder {
+    color: $color;
+  }
 }
 
 // placeholder this
 @mixin phs {
-	&::-webkit-input-placeholder {
-		@content;
-	}
-	&::-moz-placeholder {
-		@content;
-	}
-	&:-ms-input-placeholder {
-		@content;
-	}
-	&::placeholder {
-		@content;
-	}
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::placeholder {
+    @content;
+  }
 }
 
 // input styles
 @mixin inputOutline($name, $color, $bg, $border-color, $placeholder, $hoverBorder, $disabledBorder) {
-	
-	.input-outline-#{$name} {
-		color: $color;
-		background-image: none;
-		background-color: $bg;
-		border-color: $border-color!important;
-		@include pht($placeholder);
-		@include fw(400!important);
-		text-align: left !important;
-		cursor: auto!important;
-		@include tm;
-	}
 
-	.input-outline-#{$name}:hover {
-		background-color: $bg;
-		border-color: $border-color!important;
-		@include tm;
-	}
-	
-	.input-outline-#{$name}:focus,
-	.input-outline-#{$name}.focus {
-		background-color: $bg;
-		border-color: $hoverBorder!important;
-		box-shadow: none;
-		outline: none;
-		@include tm;
-	}
+  .input-outline-#{$name} {
+    color: $color;
+    background-image: none;
+    background-color: $bg;
+    border-color: $border-color !important;
+    @include pht($placeholder);
+    @include fw(400 !important);
+    text-align: left !important;
+    cursor: auto !important;
+    @include tm;
+  }
 
-	.input-outline-#{$name}:active,
-	.input-outline-#{$name}.active,
-	.show > .input-outline-#{$name}.dropdown-toggle {
-		background-color: $bg;
-		border-color: $hoverBorder!important;
-		box-shadow: none;
-		outline: none;
-		@include tm;
-	}
+  .input-outline-#{$name}:hover {
+    background-color: $bg;
+    border-color: $border-color !important;
+    @include tm;
+  }
 
-	.input-outline-#{$name}:active:hover,
-	.input-outline-#{$name}:active:focus,
-	.input-outline-#{$name}:active.focus,
-	.input-outline-#{$name}.active:hover,
-	.input-outline-#{$name}.active:focus,
-	.input-outline-#{$name}.active.focus,
-	.show > .input-outline-#{$name}.dropdown-toggle:hover,
-	.show > .input-outline-#{$name}.dropdown-toggle:focus,
-	.show > .input-outline-#{$name}.dropdown-toggle.focus {
-		border-color: $hoverBorder!important;
-		box-shadow: none;
-		outline: none;
-		@include tm;
-	}
+  .input-outline-#{$name}:focus,
+  .input-outline-#{$name}.focus {
+    background-color: $bg;
+    border-color: $hoverBorder !important;
+    box-shadow: none;
+    outline: none;
+    @include tm;
+  }
 
-	.input-outline-#{$name}.disabled:focus,
-	.input-outline-#{$name}.disabled.focus,
-	.input-outline-#{$name}:disabled:focus,
-	.input-outline-#{$name}:disabled.focus {
-		border-color: $hoverBorder!important;
-		@include tm;
-	}
+  .input-outline-#{$name}:active,
+  .input-outline-#{$name}.active,
+  .show > .input-outline-#{$name}.dropdown-toggle {
+    background-color: $bg;
+    border-color: $hoverBorder !important;
+    box-shadow: none;
+    outline: none;
+    @include tm;
+  }
 
-	.input-outline-#{$name}.disabled:hover,
-	.input-outline-#{$name}:disabled:hover {
-		border-color: $disabledBorder!important;
-		@include tm;
-	}
+  .input-outline-#{$name}:active:hover,
+  .input-outline-#{$name}:active:focus,
+  .input-outline-#{$name}:active.focus,
+  .input-outline-#{$name}.active:hover,
+  .input-outline-#{$name}.active:focus,
+  .input-outline-#{$name}.active.focus,
+  .show > .input-outline-#{$name}.dropdown-toggle:hover,
+  .show > .input-outline-#{$name}.dropdown-toggle:focus,
+  .show > .input-outline-#{$name}.dropdown-toggle.focus {
+    border-color: $hoverBorder !important;
+    box-shadow: none;
+    outline: none;
+    @include tm;
+  }
+
+  .input-outline-#{$name}.disabled:focus,
+  .input-outline-#{$name}.disabled.focus,
+  .input-outline-#{$name}:disabled:focus,
+  .input-outline-#{$name}:disabled.focus {
+    border-color: $hoverBorder !important;
+    @include tm;
+  }
+
+  .input-outline-#{$name}.disabled:hover,
+  .input-outline-#{$name}:disabled:hover {
+    border-color: $disabledBorder !important;
+    @include tm;
+  }
 }
-
 
 // input styles
 
 @mixin a {
-	&:after {
-		@content;
-	}
+  &:after {
+    @content;
+  }
 }
 
 @mixin b {
-	&:before {
-		@content;
-	}
+  &:before {
+    @content;
+  }
 }
 
 @mixin ab {
-	&:after,
-	&:before {
-		@content;
-	}
+  &:after,
+  &:before {
+    @content;
+  }
 }
 
 @mixin hd {
-	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-		@content;
-	}
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    @content;
+  }
 }
 
-
 @mixin p($value) {
-	padding: $value;
+  padding: $value;
 }
 
 @mixin px($value) {
-	padding-right: $value;
-	padding-left: $value;
+  padding-right: $value;
+  padding-left: $value;
 }
 
 @mixin py($value) {
-	padding-top: $value;
-	padding-bottom: $value;
+  padding-top: $value;
+  padding-bottom: $value;
 }
 
 @mixin m($value) {
-	margin: $value;
+  margin: $value;
 }
-	
+
 @mixin mx($value) {
-	margin-right: $value;
-	margin-left: $value;
+  margin-right: $value;
+  margin-left: $value;
 }
 
 @mixin my($value) {
-	margin-top: $value;
-	margin-bottom: $value;
+  margin-top: $value;
+  margin-bottom: $value;
 }
 
 @mixin on {
-	&:focus {
-		outline: none;
-	}
+  &:focus {
+    outline: none;
+  }
 }
 
 

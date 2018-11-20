@@ -1,218 +1,218 @@
 @import "../../styles/General.scss";
 
 .header {
-	margin: 0px;
-	padding: 10px 25px;
-	outline: none;
-	border: none;
-	background-color: $header_bg;
-	.logo {
-		@extend .d-block;
-		@extend .ml20;
-		img {
-			@extend .d-block;
-			max-width: 100%;
-			width: 127px;
-			height: auto;
-			margin-top: 5px;
-		}
-	}
-	.dropdown-nav {
-		position: relative;
-		z-index: 1;
-		.dropdown-menu {
-			&.open {
-				@extend .d-block;
-			}
-			@extend .d-none;
-			position: absolute;
-			right: 0;
-			left: auto;
-			z-index: 10;
-			top: 100%;
-			margin-top: 20px;
-			padding: 0;
-			background-color: $white;
-			border: 1px solid $grey_text;
-			@include r(5px);
-			padding: 0;
-			.dropdown-list,
-			.dropdown-list li,
-			.dropdown-item {
-				width: 100%;
-			}
-			.dropdown-list li {
-				@include f {
-					.dropdown-item {
-						position: relative;
-						padding-top: 10px;
-						border-top-right-radius: 5px;
-						border-top-left-radius: 5px;
-						@include b {
-							@include ct;
-							position: absolute;
-							z-index: 11;
-							bottom: 100%;
-							right: 20px;
-							width: 10px;
-							height: 10px;
-							margin-bottom: -5px;
-							background: $white;
-							border-top: 1px solid $grey_text;
-							border-right: 1px solid $grey_text;
-							@include tf(rotate(-45deg))
-						}
-						@include h {
-							@include b {
-								background-color: $light_grey_bg;
-							}
-						}
-					}
-				}
-			}
-			.dropdown-list li {
-				@include l {
-					.dropdown-item {
-						border-bottom-right-radius: 5px;
-						border-bottom-left-radius: 5px;
-					}
-				}
-			}
-			.dropdown-item {
-				@extend .d-flex;
-				@extend .align-items-center;
-				min-height: 35px;
-				@include nw;
-				color: $grey_text;
-				@include fz(14);
-				@include fw(600);
-				@include px(10px);
-				padding-right: 15px;
-				@include py(2px);
-				text-decoration: none;
-				background-color: $white;
-				@include h {
-					background-color: $light_grey_bg;
-				}
-				i {
-					width: 30px;
-					margin-right: 10px;
-					@include fz(16);
-					text-align: center;
-				}
-				&.drordown-item-large {
-					@include py(10px);
-					border-top: 1px solid $grey_text;
-				}
-				.club-logo {
-					width: 30px;
-					@extend .d-block;
-					margin-left: 0;
-					text-align: center;
-					position: relative;
-					margin-right: 10px;
-					img {
-						display: block;
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						@include tf(translate(-50%, -50%) scale(0.5));
-					}
-				}
-			}
-		}
-		.dropdown-toggle {
-			@include h {
-				text-decoration: none;
-				@include tm;
-			}
-			@include fc {
-				outline: none;
-				-webkit-box-shadow: none;
-				box-shadow: none;
-			}
-			&.active {
-				outline: none;
-				-webkit-box-shadow: none;
-				box-shadow: none;
-			}
-			@extend .d-flex;
-			@extend .justify-content-center;
-			@extend .align-items-center;
-			@extend .flex-wrap;
-			@extend .ml25;
-			text-decoration: none;
-			color: $white;
-			@include tm;
-			cursor: pointer;
-			.arrow {
-				@extend .d-block;
-				@include fz(8);
-			}
-		}
-		.dropdown-item-col {
-			@extend .d-inline-flex;
-			@extend .flex-column;
-			color: $white;
-			h6 {
-			}
-			span {
-				@include fz(12);
-				@include fw(600);
-				color: $success_light;
-			}
-		}
-		.avatar-photo {
-			@extend .d-block;
-			width: 35px;
-			height: 35px;
-			@include r(50%);
-			background-color: $grey;
-			@extend .ml10;
-			overflow: hidden;
-			position: relative;
-			img {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				@include tf(translate(-50%, -50%));
-				&.x2 {
-					@include tf(translate(-50%, -50%) scale(0.5));
-				}
-			}
-		}
-		.club-logo {
-			@extend .ml10;
-			i {
-				@include fz(26);
-				line-height: 1.2;
-			}
-		}
-		.arrow-wrap {
-			@extend .ml10;
-		}
-	}
-	.nav-toggler {
-		color: $white;
-		cursor: pointer;
-	}
+  margin: 0px;
+  padding: 10px 25px;
+  outline: none;
+  border: none;
+  background-color: $header_bg;
+  .logo {
+    @extend .d-block;
+    @extend .ml20;
+    img {
+      @extend .d-block;
+      max-width: 100%;
+      width: 127px;
+      height: auto;
+      margin-top: 5px;
+    }
+  }
+  .dropdown-nav {
+    position: relative;
+    z-index: 1;
+    .dropdown-menu {
+      &.open {
+        @extend .d-block;
+      }
+      @extend .d-none;
+      position: absolute;
+      right: 0;
+      left: auto;
+      z-index: 10;
+      top: 100%;
+      margin-top: 20px;
+      padding: 0;
+      background-color: $white;
+      border: 1px solid $grey_text;
+      @include r(5px);
+      padding: 0;
+      .dropdown-list,
+      .dropdown-list li,
+      .dropdown-item {
+        width: 100%;
+      }
+      .dropdown-list li {
+        @include f {
+          .dropdown-item {
+            position: relative;
+            padding-top: 10px;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            @include b {
+              @include ct;
+              position: absolute;
+              z-index: 11;
+              bottom: 100%;
+              right: 20px;
+              width: 10px;
+              height: 10px;
+              margin-bottom: -5px;
+              background: $white;
+              border-top: 1px solid $grey_text;
+              border-right: 1px solid $grey_text;
+              @include tf(rotate(-45deg))
+            }
+            @include h {
+              @include b {
+                background-color: $light_grey_bg;
+              }
+            }
+          }
+        }
+      }
+      .dropdown-list li {
+        @include l {
+          .dropdown-item {
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+        }
+      }
+      .dropdown-item {
+        @extend .d-flex;
+        @extend .align-items-center;
+        min-height: 35px;
+        @include nw;
+        color: $grey_text;
+        @include fz(14);
+        @include fw(600);
+        @include px(10px);
+        padding-right: 15px;
+        @include py(2px);
+        text-decoration: none;
+        background-color: $white;
+        @include h {
+          background-color: $light_grey_bg;
+        }
+        i {
+          width: 30px;
+          margin-right: 10px;
+          @include fz(16);
+          text-align: center;
+        }
+        &.drordown-item-large {
+          @include py(10px);
+          border-top: 1px solid $grey_text;
+        }
+        .club-logo {
+          width: 30px;
+          @extend .d-block;
+          margin-left: 0;
+          text-align: center;
+          position: relative;
+          margin-right: 10px;
+          img {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include tf(translate(-50%, -50%) scale(0.5));
+          }
+        }
+      }
+    }
+    .dropdown-toggle {
+      @include h {
+        text-decoration: none;
+        @include tm;
+      }
+      @include fc {
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      &.active {
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      @extend .d-flex;
+      @extend .justify-content-center;
+      @extend .align-items-center;
+      @extend .flex-wrap;
+      @extend .ml25;
+      text-decoration: none;
+      color: $white;
+      @include tm;
+      cursor: pointer;
+      .arrow {
+        @extend .d-block;
+        @include fz(8);
+      }
+    }
+    .dropdown-item-col {
+      @extend .d-inline-flex;
+      @extend .flex-column;
+      color: $white;
+      h6 {
+      }
+      span {
+        @include fz(12);
+        @include fw(600);
+        color: $success_light;
+      }
+    }
+    .avatar-photo {
+      @extend .d-block;
+      width: 35px;
+      height: 35px;
+      @include r(50%);
+      background-color: $grey;
+      @extend .ml10;
+      overflow: hidden;
+      position: relative;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include tf(translate(-50%, -50%));
+        &.x2 {
+          @include tf(translate(-50%, -50%) scale(0.5));
+        }
+      }
+    }
+    .club-logo {
+      @extend .ml10;
+      i {
+        @include fz(26);
+        line-height: 1.2;
+      }
+    }
+    .arrow-wrap {
+      @extend .ml10;
+    }
+  }
+  .nav-toggler {
+    color: $white;
+    cursor: pointer;
+  }
 }
 
 .header-left {
-	@extend .d-inline-flex;
-	@extend .justify-content-center;
-	@extend .align-items-center;
+  @extend .d-inline-flex;
+  @extend .justify-content-center;
+  @extend .align-items-center;
 }
 
 .header-right {
-	@extend .ml-auto;
+  @extend .ml-auto;
 }
 
 .header-nav {
-	@extend .list-inline;
-	li {
-		@extend .d-inline-flex;
-		@extend .flex-column;
-	}
+  @extend .list-inline;
+  li {
+    @extend .d-inline-flex;
+    @extend .flex-column;
+  }
 }
 

@@ -1,7 +1,18 @@
 import React, {Component} from 'react';
+import {
+    AddPhoto,
+    Button,
+    DropdownSelect,
+    InputRadio,
+    InputText,
+    Label,
+    Modal,
+    PageToolbar,
+    TeamCard,
+    TeamCardSimple
+} from "../../common";
 
 import i18n from '../../../i18n';
-import {PageToolbar, TeamCard, TeamCardSimple, Button, Modal} from "../../common";
 
 const LOOK = {
     CARD: 'CARD',
@@ -28,13 +39,13 @@ class TeamsScreen extends Component {
                 className={`btn-sm btn-success ${this.state.look === LOOK.CARD && 'active'}`}
                 onClick={() => this.setLAFPressed(LOOK.CARD)}
             >
-                <i className="ft-block" />
+                <i className="ft-block"/>
             </span>
             <span
                 className={`btn-sm btn-success ${this.state.look === LOOK.LIST && 'active'}`}
                 onClick={() => this.setLAFPressed(LOOK.LIST)}
             >
-                <i className="ft-list-view" />
+                <i className="ft-list-view"/>
             </span>
         </div>
     );
@@ -50,11 +61,13 @@ class TeamsScreen extends Component {
                     actions={[
                         this.renderLookToggle(),
                         (
-                            <Button
-                                icon="plus"
-                                text="Создать Команду"
-                                onClick={this.actionButtonPressed}
-                            />
+                            <div className="settings-item">
+                                <Button
+                                    icon="plus"
+                                    text={i18n.t('teams__list_create_team_cta')}
+                                    onClick={this.actionButtonPressed}
+                                />
+                            </div>
                         )
                     ]}
                 />
@@ -85,9 +98,49 @@ class TeamsScreen extends Component {
                         </div>
                     )
                 }
-                <Modal visible={this.state.modalVisible}>
-                    <div>
-                        hgfiughsidf
+                <Modal
+                    visible={this.state.modalVisible}
+                    title={i18n.t('teams__list__modal_title')}
+                    onClose={() => this.setState({
+                        modalVisible: false
+                    })}
+                >
+                    <div className="bordered-box">
+                        <div className="row">
+                            <div className="col-md-6">
+                                <AddPhoto/>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="form-group mb20">
+                                    <div className="d-block">
+                                        <Label/>
+                                    </div>
+                                    <div className="d-block">
+                                        <InputText/>
+                                    </div>
+                                </div>
+                                <div className="form-group mb15">
+                                    <div className="d-block">
+                                        <label className="">
+                                            Пол игроков
+                                        </label>
+                                    </div>
+                                    <div className="d-block">
+                                        <InputRadio/>
+                                    </div>
+                                </div>
+                                <div className="form-group mb20">
+                                    <div className="d-block">
+                                        <label className="">
+                                            Возраст игроков:
+                                        </label>
+                                    </div>
+                                    <div className="d-block">
+                                        <DropdownSelect/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </Modal>
             </div>
