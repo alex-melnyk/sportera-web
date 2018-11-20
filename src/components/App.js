@@ -2,32 +2,32 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {Route, Switch, withRouter} from "react-router-dom";
 
-import {NavigationRoutes} from '../navigation';
+import {NavigationRoutes, SideBarRoutes} from '../navigation';
 import {Header, Sidebar} from './common';
 
 import './App.scss';
 
 class App extends Component {
     state = {
-        menuCollapsed: false
+        sidebarCollapsed: false
     };
 
     toggleMenuPressed = () => {
         this.setState(({menuCollapsed}) => ({
-            menuCollapsed: !menuCollapsed
+            sidebarCollapsed: !menuCollapsed
         }));
     };
 
     render() {
         const {
-            menuCollapsed
+            sidebarCollapsed
         } = this.state;
 
         return (
             <div className="App">
                 <Header onMenuToggle={this.toggleMenuPressed}/>
-                <div className={`Page-content ${menuCollapsed && 'small-menu'}`}>
-                    <Sidebar collapsed={menuCollapsed}/>
+                <div className={`Page-content ${sidebarCollapsed ? 'small-menu' : ''}`}>
+                    <Sidebar routes={SideBarRoutes}/>
                     <main className="main">
                         <Switch location={this.props.location}>
                             {

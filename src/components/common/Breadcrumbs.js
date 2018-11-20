@@ -12,10 +12,10 @@ const Breadcrumbs = ({location}) => {
     return (
         <ul className="breadcrumbs">
             <li className="breadcrumb-item">
-                team
+                {route.path}
             </li>
             <li className="breadcrumb-item active">
-                {route.path}
+
             </li>
         </ul>
     );
