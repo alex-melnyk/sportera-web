@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {Route, Switch, withRouter} from "react-router-dom";
+import {Redirect, Route, Switch, withRouter} from "react-router-dom";
 
-import {NavigationRoutes, SideBarRoutes} from '../navigation';
+import {NavigationRoutes, SideBarRoutes, Routes} from '../navigation';
 import {Header, Sidebar} from './common';
 
 import './App.scss';
@@ -30,6 +30,13 @@ class App extends Component {
                     <Sidebar routes={SideBarRoutes}/>
                     <main className="main">
                         <Switch location={this.props.location}>
+                            <Route
+                                path="/"
+                                exact={true}
+                                render={() => (
+                                    <Redirect to={Routes.DASHBOARD} />
+                                )}
+                            />
                             {
                                 NavigationRoutes.map((route, index) => (
                                     <Route

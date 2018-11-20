@@ -1,34 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withRouter} from "react-router-dom";
+import {NavLink} from "react-router-dom";
+import withBreadcrumbs from 'react-router-breadcrumbs-hoc';
 
 import {NavigationRoutes} from "../../navigation";
 
 import './Breadcrumbs.scss';
 
-const Breadcrumbs = ({location}) => {
-    const route = NavigationRoutes.find((route) => route.path === location.pathname);
-
-    return (
-        <ul className="breadcrumbs">
-            <li className="breadcrumb-item">
-                {route.path}
-            </li>
-            <li className="breadcrumb-item active">
-
-            </li>
-        </ul>
-    );
-};
+const Breadcrumbs = ({breadcrumbs}) => (
+    <ul className="breadcrumbs">
+        {
+            breadcrumbs.filter((b, i) => i).map((breadcrumb, index) => (
+                <NavLink
+                    key={`breadcrumb_${index}`}
+                    className={`breadcrumb-item`}
+                    to={breadcrumb.props.match.url}
+                    exact={true}
+                >
+                    {breadcrumb}
+                </NavLink>
+            ))
+        }
+    </ul>
+);
 
 Breadcrumbs.propTypes = {
-    paths: PropTypes.array
+    breadcrumbs: PropTypes.array
 };
 
 Breadcrumbs.defaultProps = {
-    paths: []
+    breadcrumbs: []
 };
 
-const BreadcrumbsWithRouter = withRouter(Breadcrumbs);
-
+const BreadcrumbsWithRouter = withBreadcrumbs(NavigationRoutes)(Breadcrumbs);
 export {BreadcrumbsWithRouter as Breadcrumbs};
