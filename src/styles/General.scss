@@ -4,6 +4,7 @@
 @import "./Gap.scss";
 @import "./Typo.scss";
 
+@include selection($selection_bg);
 
 .d-none {
 	display: none;
