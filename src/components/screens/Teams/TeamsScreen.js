@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-
-import i18n from '../../../i18n';
-import {PageToolbar, TeamCard, TeamCardSimple, Button, Modal} from "../../common";
+import {Button, Modal, PageToolbar, TeamCard, TeamCardSimple} from "../../common";
 
 const LOOK = {
     CARD: 'CARD',
@@ -28,13 +26,13 @@ class TeamsScreen extends Component {
                 className={`btn-sm btn-success ${this.state.look === LOOK.CARD && 'active'}`}
                 onClick={() => this.setLAFPressed(LOOK.CARD)}
             >
-                <i className="ft-block" />
+                <i className="ft-block"/>
             </span>
             <span
                 className={`btn-sm btn-success ${this.state.look === LOOK.LIST && 'active'}`}
                 onClick={() => this.setLAFPressed(LOOK.LIST)}
             >
-                <i className="ft-list-view" />
+                <i className="ft-list-view"/>
             </span>
         </div>
     );

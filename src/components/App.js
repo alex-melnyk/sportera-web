@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {Redirect, Route, Switch, withRouter} from "react-router-dom";
 
-import {NavigationRoutes, SideBarRoutes, Routes} from '../navigation';
+import {NavigationRoutes, Routes, SideBarRoutes} from '../navigation';
 import {Header, Sidebar} from './common';
 
 import './App.scss';
@@ -34,7 +34,7 @@ class App extends Component {
                                 path="/"
                                 exact={true}
                                 render={() => (
-                                    <Redirect to={Routes.DASHBOARD} />
+                                    <Redirect to={Routes.DASHBOARD}/>
                                 )}
                             />
                             {

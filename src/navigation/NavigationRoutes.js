@@ -1,5 +1,5 @@
 import {Routes} from "./Routes";
-import {DashboardScreen, TeamsScreen, TeamsInformationScreen} from "../components/screens";
+import {DashboardScreen, TeamsInformationScreen, TeamsScreen} from "../components/screens";
 
 const NavigationRoutes = [
     {

@@ -1,43 +1,44 @@
 @import "../../styles/General.scss";
 
 .breadcrumbs {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	@extend .d-inline-flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  @extend .d-inline-flex;
 }
 
 .breadcrumb-item {
-	position: relative;
-	@include in;
-	@include fz(24);
-	@include fw(400);
-	color: $grey_text;
-	padding-right: 8px;
-	@include b {
-		content: '/';
-		color: $grey_text;
-		@include in;
-		padding-right: 8px;
-	}
-	@include h {
-		cursor: pointer;
-		text-decoration: underline;
-	}
-	cursor: pointer;
-	&.active {
-		color: $black;
-		@include h {
-			cursor: default;
-			text-decoration: none;
-		}
-	}
-	&:first-letter {
-		text-transform: uppercase;
-	};
-	@include f {
-		@include b {
-			@extend .d-none;
-		}
-	}
+  position: relative;
+  @include in;
+  @include fz(24);
+  @include fw(400);
+  color: $grey_text;
+  padding-right: 8px;
+  @include b {
+    content: '/';
+    color: $grey_text;
+    @include in;
+    padding-right: 8px;
+  }
+  @include h {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  cursor: pointer;
+  &.active {
+    color: $black;
+    @include h {
+      cursor: default;
+      text-decoration: none;
+    }
+  }
+  &:first-letter {
+    text-transform: uppercase;
+  }
+;
+  @include f {
+    @include b {
+      @extend .d-none;
+    }
+  }
 }

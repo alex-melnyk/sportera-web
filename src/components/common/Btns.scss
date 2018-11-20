@@ -1,34 +1,34 @@
 @import "../../styles/General.scss";
 
 .success-group-sm {
-	.btn-sm {
-		background-color: $white;
-		color: $black;
-		* {
-			color: $black;
-		}
-		@include h {
-			background-color: $light_grey_bg;
-		}
-		@include f {
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
-		}
-		@include l {
-			border-top-left-radius: 0;
-			border-bottom-left-radius: 0;
-		}
-		&.active {
-			background-color: $success;
-			color: $white;
-			* {
-				color: $white;
-			}
-			@include h {
-				background-color: $success;
-				color: $white;
-				cursor: default;
-			}
-		}
-	}
+  .btn-sm {
+    background-color: $white;
+    color: $black;
+    * {
+      color: $black;
+    }
+    @include h {
+      background-color: $light_grey_bg;
+    }
+    @include f {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    @include l {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &.active {
+      background-color: $success;
+      color: $white;
+      * {
+        color: $white;
+      }
+      @include h {
+        background-color: $success;
+        color: $white;
+        cursor: default;
+      }
+    }
+  }
 }

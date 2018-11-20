@@ -1,15 +1,14 @@
 @import "../../styles/General.scss";
 
-
 .icons-preview {
-	display: block;
-	i {
-		display: inline-block;
-		width: 200px;
-		margin-bottom: 10px;
-		&:before {
-			width: 40px;
-		}
+  display: block;
+  i {
+    display: inline-block;
+    width: 200px;
+    margin-bottom: 10px;
+    &:before {
+      width: 40px;
+    }
 
-	}
+  }
 }

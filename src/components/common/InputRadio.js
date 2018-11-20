@@ -1,22 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './InputRadio.scss';
 
 const InputRadio = () => (
-	<div>
+    <div>
     <span>
 			<input type="radio" name="gender" id="female" checked/>
 			<label for="female">Девочки </label>
 		</span>
-    <span>
+        <span>
 			<input type="radio" name="gender" id="male"/>
 			<label for="male">Мальчики </label>
 		</span>
-	</div>
+    </div>
 );
 
-InputRadio.propTypes = {
-};
+InputRadio.propTypes = {};
 
 export {InputRadio};
