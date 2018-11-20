@@ -1,16 +1,20 @@
 import {Routes} from "./Routes";
 import {DashboardScreen, TeamsInformationScreen, TeamsScreen} from "../components/screens";
 
+import i18n from '../i18n';
+
 const NavigationRoutes = [
     {
         path: Routes.DASHBOARD,
         exact: true,
-        component: DashboardScreen
+        component: DashboardScreen,
+        breadcrumb: i18n.t('dashboard__page_title')
     },
     {
         path: Routes.TEAMS,
         exact: true,
-        component: TeamsScreen
+        component: TeamsScreen,
+        breadcrumb: i18n.t('teams__page_title')
     },
     {
         path: Routes.TEAMS_INFORMATION,
@@ -20,7 +24,8 @@ const NavigationRoutes = [
     {
         path: Routes.PLAYERS,
         exact: true,
-        component: null
+        component: null,
+        breadcrumb: i18n.t('players__page_title')
     },
     {
         path: Routes.DOCUMENTS,

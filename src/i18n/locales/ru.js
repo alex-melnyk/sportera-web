@@ -7,10 +7,13 @@ export default {
 
     // SIDE BAR
     dashboard__sidebar_label: 'Дэшборд',
+    dashboard__page_title: 'Дэшборд',
     teams__sidebar_label: 'Команды',
+    teams__page_title: 'Команды',
     teams__list_create_team_cta: 'Создать Команду',
     teams__list__modal_title: 'Создать Команду',
     players__sidebar_label: 'Игроки',
+    players__page_title: 'Игроки',
     documents__sidebar_label: 'Документы',
     calendar__sidebar_label: 'Календарь',
     club__sidebar_label: 'Клуб',

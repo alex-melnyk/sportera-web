@@ -12,7 +12,7 @@ const Breadcrumbs = ({breadcrumbs}) => (
         {
             breadcrumbs.filter((b, i) => i).map((breadcrumb, index) => (
                 <NavLink
-                    key={`breadcrumb_${index}`}
+                    key={breadcrumb.key}
                     className={`breadcrumb-item`}
                     to={breadcrumb.props.match.url}
                     exact={true}
@@ -32,5 +32,8 @@ Breadcrumbs.defaultProps = {
     breadcrumbs: []
 };
 
-const BreadcrumbsWithRouter = withBreadcrumbs(NavigationRoutes)(Breadcrumbs);
+const BreadcrumbsWithRouter = withBreadcrumbs(NavigationRoutes.map((route) => ({
+    path: route.path,
+    breadcrumb: route.breadcrumb
+})))(Breadcrumbs);
 export {BreadcrumbsWithRouter as Breadcrumbs};
