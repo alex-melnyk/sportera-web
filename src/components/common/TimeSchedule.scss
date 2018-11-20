@@ -1,0 +1,20 @@
+@import "../../styles/General.scss";
+
+.time-schedule {
+  .col {
+    position: relative;
+    @include f {
+      @include a {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 1px;
+        background-color: $black;
+        position: absolute;
+        top: 50%;
+        right: -3px;
+        @include tf(translate(0, -50%))
+      }
+    }
+  }
+}

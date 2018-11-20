@@ -24,8 +24,8 @@
 }
 
 .btn {
-  @include px(10px);
-  min-width: 160px;
+  @include px(15px);
+  /*min-width: 160px;*/
   i {
     @include fz(12)
     + span {

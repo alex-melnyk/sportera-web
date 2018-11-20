@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import './DropdownSelect.scss';
 
 const DropdownSelect = () => (
-  <div class="dropdown-select">
-    <span class="dropdown-toggle">Возраст от</span>
-    <div class="dropdown-menu">
-      <span class="dropdown-item">Select option1</span>
-      <span class="dropdown-item">Select option2</span>
-      <span class="dropdown-item">Select option3</span>
-      <span class="dropdown-item">Select option4</span>
+  <div className="dropdown-select">
+    <span className="dropdown-toggle">Возраст от</span>
+    <div className="dropdown-menu d-none">
+      <span className="dropdown-item">Select option1</span>
+      <span className="dropdown-item">Select option2</span>
+      <span className="dropdown-item">Select option3</span>
+      <span className="dropdown-item">Select option4</span>
     </div>
   </div>
 );

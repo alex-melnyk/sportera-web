@@ -1,0 +1,27 @@
+@import "../../styles/General.scss";
+
+.text-link {
+  @extend .d-inline-flex;
+  @extend .align-items-center;
+  line-height: 1.2;
+  @include fz(14)
+  @include fw(600);
+  @include on;
+  @include pht($grey_text);
+  margin-top: 10px;
+  margin-bottom: 0px;
+  i {
+  	@include fz(16)
+  }
+  span {
+    padding-left: 10px;
+  }
+  * {
+    color: $success;
+  }
+  @include h {
+    span {
+      text-decoration: underline;
+    }
+  }
+}
