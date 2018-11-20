@@ -27,7 +27,7 @@
       position: absolute;
       z-index: 2;
       top: 50%;
-      right: 15px;
+      right: 10px;
       margin-top: -2px;
       font-family: "ft";
       font-style: normal;
@@ -39,7 +39,7 @@
       font-variant: normal;
       text-transform: none;
       margin-left: 0;
-      @include fz(6);
+      @include fz(5);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       color: $grey_text;
