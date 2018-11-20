@@ -61,7 +61,6 @@
 .modal-footer {
   min-height: 55px;
   @include px(20px);
-  @include py(10px);
 }
 
 .modal-body .bordered-box {
@@ -72,6 +71,7 @@
   background-color: $white;
   @extend .d-flex;
   @extend .align-items-center;
+  @include py(10px);
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
@@ -97,4 +97,5 @@
 .modal-footer {
   @extend .d-flex;
   @extend .justify-content-end;
+  @include py(20px);
 }

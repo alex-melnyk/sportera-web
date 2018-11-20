@@ -1,7 +1,19 @@
 @import "../../styles/General.scss";
 
-.modal-close {
-  @include fz(12);
-  @extend .d-flex;
-  color: $grey_text;
+.close-wrap {
+	@extend .d-flex;
+	@extend .align-items-center;
+	@extend .justify-content-center;
+	flex: auto 0 0;
+	.close {
+		@extend .d-flex;
+		min-width: 25px;
+		@extend .justify-content-center;
+	}
+}
+
+.close {
+	@include fz(12);
+	line-height: 1.2;
+	color: $grey_text;
 }
