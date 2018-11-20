@@ -11,7 +11,6 @@ export * from './Modal';
 export * from './PageToolbar';
 export * from './Sidebar';
 export * from './TeamCard';
-export * from './TeamCardSimple';
 export * from './Textarea';
 export * from './TextLink';
 export * from './TimeSchedule';

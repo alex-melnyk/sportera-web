@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {Button, PageToolbar, TeamCard, TeamCardSimple} from "../../common";
+import {Button, PageToolbar, TeamCard} from "../../common";
 
 import i18n from '../../../i18n';
 import {CreateTeamModal} from "../../modals";
