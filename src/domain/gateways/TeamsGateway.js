@@ -14,8 +14,9 @@ class TeamsGateway {
         return data;
     }
 
-    async addNewTeam({name, image, sex, age, coach, schedule}) {
-        const {data} = await this.restAdapter.post(APIPaths.ADD_NEW_TEAM,{name, image, sex, age, coach, schedule});
+    async addNewTeam({name}) {
+
+        const {data} = await this.restAdapter.post(APIPaths.TEAMS,{name});
         
         return data;
     }

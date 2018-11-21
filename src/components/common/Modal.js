@@ -8,7 +8,7 @@ const Modal = ({children, visible, title, actions, onClose}) => {
     }
 
     return (
-        <div className="modal-wrap" onClick={() => onClose && onClose()}>
+        <div className="modal-wrap">
             <div className="modal-dialog">
                 <div className="modal-content modal-wide">
                     <div className="modal-header">

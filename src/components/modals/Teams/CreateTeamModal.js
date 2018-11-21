@@ -40,7 +40,7 @@ class CreateTeamModal extends Component {
     renderActionButtons = () => (
         <Button
             text={i18n.t('common_cta_save')}
-            onClick={this.props.onClose}
+            onClick={this.addNewTeamHandler}
         />
     );
 

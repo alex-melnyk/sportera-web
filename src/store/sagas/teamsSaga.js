@@ -24,7 +24,7 @@ function* saga_addNewTeam({name, image, sex, age, coach, schedule}) {
     // console.log("[teamsSaga] newTeam",newTeam);
 
     try {
-        const data = yield call(() => teamsService.addNewTeam({name, image, sex, age, coach, schedule}));
+        const data = yield call(() => teamsService.addNewTeam({name}));
         console.log("DATA:", data);
         yield put(TeamsActions.createNewTeamSuccess({data}));
     } catch (error) {
