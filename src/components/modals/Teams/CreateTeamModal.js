@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import * as TeamActions from '../../../store/actions/teamsActions'
 
 import {
@@ -22,19 +22,19 @@ import '../../common/close.scss';
 
 class CreateTeamModal extends Component {
 
-constructor(props){
-    super(props);
-    this.addNewTeamHandler = this.addNewTeamHandler.bind(this);
-}
+    constructor(props) {
+        super(props);
+        this.addNewTeamHandler = this.addNewTeamHandler.bind(this);
+    }
 
-    addNewTeamHandler(){        
+    addNewTeamHandler() {
         this.props.saga_createNewTeamRequest({
             name: "nameFromInput",
-             image: "imageFromInput",
-              sex: "imageFromInput",
-               age: "imageFromInput",
-                coach: "imageFromInput",
-                 schedule: "imageFromInput"
+            image: "imageFromInput",
+            sex: "imageFromInput",
+            age: "imageFromInput",
+            coach: "imageFromInput",
+            schedule: "imageFromInput"
         })
     }
 
@@ -235,20 +235,8 @@ CreateTeamModal.propTypes = {
     onClose: PropTypes.func,
 };
 
-// const mapStateToProps = state => {
-//     return {
-//       loadinUser: state.log.loading,
-//       edm: state.log.emailDontMatch,
-//       pdm: state.log.passwordDontMatch
-//     };
-//   };
-
-const CreateTeamModalContainer = connect((state) => ({
-    // State
-    // mapStateToProps
-}), 
-    // Actions
-{saga_createNewTeamRequest: TeamActions.createNewTeam}
+const CreateTeamModalContainer = connect((state) => ({}),
+    {saga_createNewTeamRequest: TeamActions.createNewTeam}
 )(CreateTeamModal);
 
 export {CreateTeamModalContainer as CreateTeamModal};
