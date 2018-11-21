@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import {Button, PageToolbar, TeamCard} from "../../common";
 
+import axios from 'axios';
 import i18n from '../../../i18n';
 import {CreateTeamModal} from "../../modals";
 
@@ -15,8 +16,21 @@ const LOOK = {
 class TeamsScreen extends Component {
     state = {
         look: LOOK.CARD,
-        modalVisible: false
+        modalVisible: false,
+        teams: []
     };
+
+    componentDidMount() {
+        axios
+            .get('https://private-anon-5368ffcaa0-sporteratest.apiary-mock.com/api/programs')
+            .then(response => {
+                const teams = response.data;
+                this.setState({
+                    teams: teams
+                });
+            })
+            .catch(error => console.log(error));
+    }
 
     setLAFPressed = (look) => {
         this.setState({look});
@@ -48,47 +62,55 @@ class TeamsScreen extends Component {
             look
         } = this.state;
 
+        // get teams data
+        const teamsData = []; 
+        this.state.teams.map(element => {
+
+            // get data for coaches
+            const coachData = [];
+            element.employee_programs.map(el =>{
+                const firstName = el.employee_position.employee.first_name;
+                const lastName = el.employee_position.employee.last_name;
+                const fullName = firstName + " " + lastName;
+                return coachData.push({
+                    id: el.id,
+                    fullName
+                });
+            });
+
+            // get data for working time
+            const workingData = [];
+            element.working_times.map(el => {
+                const weekday = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+                return workingData.push({
+                    id: el.id,
+                    day: weekday[el.day],
+                    from: el.from,
+                    to: el.to
+                });
+            });
+
+            teamsData.push({
+                id: element.id,
+                name: element.name,
+                coachData,
+                workingData
+            });
+        });
+
         switch (look) {
             case LOOK.CARD:
                 return (
                     <div className="team-card-wrap grid-view">
                         {
-                            Object.keys([...new Array(8)]).map((key) => (
+                            teamsData.map((el) => (
                                 <TeamCard
+                                    key={el.id}
                                     photo={TeamPhoto}
-                                    name="Феникс 2018"
+                                    name={el.name}
                                     size={22}
-                                    trainers={[
-                                        'Игорь Смолецкий',
-                                        'Василий Марченко'
-                                    ]}
-                                    schedule={[
-                                        {
-                                            day: 'Понедельник',
-                                            from: '13:00',
-                                            till: '16:00'
-                                        },
-                                        {
-                                            day: 'Вторник',
-                                            from: '12:00',
-                                            till: '15:00'
-                                        },
-                                        {
-                                            day: 'Среда',
-                                            from: '10:00',
-                                            till: '16:00'
-                                        },
-                                        {
-                                            day: 'Четверг',
-                                            from: '13:00',
-                                            till: '16:00'
-                                        },
-                                        {
-                                            day: 'Пятница',
-                                            from: '12:00',
-                                            till: '15:00'
-                                        }
-                                    ]}
+                                    trainers={el.coachData}
+                                    schedule={el.workingData}
                                 />
                             ))
                         }
@@ -98,42 +120,14 @@ class TeamsScreen extends Component {
                 return (
                     <div className="team-card-wrap list-view">
                         {
-                            Object.keys([...new Array(8)]).map((key) => (
+                            teamsData.map((el) => (
                                 <TeamCard
+                                    key={el.id}
                                     photo={TeamPhoto}
-                                    name="Феникс 2018"
+                                    name={el.name}
                                     size={22}
-                                    trainers={[
-                                        "Игорь Смолецкий",
-                                        "Василий Марченко"
-                                    ]}
-                                    schedule={[
-                                        {
-                                            day: 'Понедельник',
-                                            from: '13:00',
-                                            till: '16:00'
-                                        },
-                                        {
-                                            day: 'Вторник',
-                                            from: '12:00',
-                                            till: '15:00'
-                                        },
-                                        {
-                                            day: 'Среда',
-                                            from: '10:00',
-                                            till: '16:00'
-                                        },
-                                        {
-                                            day: 'Четверг',
-                                            from: '13:00',
-                                            till: '16:00'
-                                        },
-                                        {
-                                            day: 'Пятница',
-                                            from: '12:00',
-                                            till: '15:00'
-                                        }
-                                    ]}
+                                    trainers={el.coachData}
+                                    schedule={el.workingData}
                                 />
                             ))
                         }
