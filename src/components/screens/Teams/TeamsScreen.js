@@ -63,7 +63,7 @@ class TeamsScreen extends Component {
             element.employee_programs.map(el =>{
                 const firstName = el.employee_position.employee.first_name;
                 const lastName = el.employee_position.employee.last_name;
-                const fullName = firstName + " " + lastName;
+                const fullName = `${firstName} ${lastName}`;
                 return coachData.push({
                     id: el.id,
                     fullName

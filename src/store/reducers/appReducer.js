@@ -9,14 +9,14 @@ const retrieveTeamsListSuccess = (state, action) => {
     return {
         ...state,
         teams: action.data,
-        error: action.error
+        error: false
     }
 };
 
-const retrieveTeamsListFailure= (state, action) => {
+const retrieveTeamsListFailure = (state, action) => {
     return {
         ...state,
-        error:action.error
+        error: true
     }
 }
 
