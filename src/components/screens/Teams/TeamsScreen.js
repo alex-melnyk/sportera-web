@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 import {Button, PageToolbar, TeamCard} from "../../common";
+import {CreateTeamModal} from "../../modals";
 
 import axios from 'axios';
 import i18n from '../../../i18n';
-import {CreateTeamModal} from "../../modals";
+import * as actions from '../../../store/actions/index';
 
 import TeamPhoto from '../../../assets/img/team/1.jpg';
 
@@ -17,19 +19,10 @@ class TeamsScreen extends Component {
     state = {
         look: LOOK.CARD,
         modalVisible: false,
-        teams: []
     };
 
     componentDidMount() {
-        axios
-            .get('https://private-anon-5368ffcaa0-sporteratest.apiary-mock.com/api/programs')
-            .then(response => {
-                const teams = response.data;
-                this.setState({
-                    teams: teams
-                });
-            })
-            .catch(error => console.log(error));
+        this.props.onInitTeams();
     }
 
     setLAFPressed = (look) => {
@@ -64,7 +57,7 @@ class TeamsScreen extends Component {
 
         // get teams data
         const teamsData = []; 
-        this.state.teams.map(element => {
+        this.props.teams.map(element => {
 
             // get data for coaches
             const coachData = [];
@@ -170,6 +163,20 @@ class TeamsScreen extends Component {
 
         );
     }
-}
+};
 
-export {TeamsScreen};
+const mapStateToProps = state => {
+    return {
+        teams: state.app.teams
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onInitTeams: () => dispatch(actions.retrieveTeamsList())
+    }
+};
+
+const ConnectTeam = connect(mapStateToProps, mapDispatchToProps)(TeamsScreen);
+
+export {ConnectTeam as TeamsScreen};
