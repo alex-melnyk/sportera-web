@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
-import {createNewTeam} from '../../../store/actions'
+import * as TeamActions from '../../../store/actions/teamsActions'
 
 import {
     AddPhoto,
@@ -27,9 +27,15 @@ constructor(props){
     this.addNewTeamHandler = this.addNewTeamHandler.bind(this);
 }
 
-    addNewTeamHandler(event){
-        console.log("addNewTeamHandler")
-        this.props.saga_createNewTeamRequest('one', 'two', '3','4', '5','6')
+    addNewTeamHandler(){        
+        this.props.saga_createNewTeamRequest({
+            name: "nameFromInput",
+             image: "imageFromInput",
+              sex: "imageFromInput",
+               age: "imageFromInput",
+                coach: "imageFromInput",
+                 schedule: "imageFromInput"
+        })
     }
 
     renderActionButtons = () => (
@@ -236,21 +242,13 @@ CreateTeamModal.propTypes = {
 //       pdm: state.log.passwordDontMatch
 //     };
 //   };
-  
-  const mapActionsToProps = dispatch => {
-    return {        
-        saga_createNewTeamRequest: (name, image, sex, age, coach, schedule) => {
-        dispatch(createNewTeam(name, image, sex, age, coach, schedule));
-      }
-    };
-  };
 
 const CreateTeamModalContainer = connect((state) => ({
     // State
     // mapStateToProps
 }), 
     // Actions
-    mapActionsToProps
+{saga_createNewTeamRequest: TeamActions.createNewTeam}
 )(CreateTeamModal);
 
 export {CreateTeamModalContainer as CreateTeamModal};

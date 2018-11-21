@@ -15,16 +15,17 @@ function* retrieveTeamsList() {
     }
 }
 
-function* saga_addNewTeam(action) {
+function* saga_addNewTeam({name, image, sex, age, coach, schedule}) {
     
-    console.log("[teamsSaga] action",action);
+    console.log("[teamsSaga] team",{name, image, sex, age, coach, schedule});
     // const newTeam = {
     //     name, image, sex, age, coach, schedule
     // }
     // console.log("[teamsSaga] newTeam",newTeam);
 
     try {
-        const data = yield call(() => teamsService.addNewTeam());
+        const data = yield call(() => teamsService.addNewTeam({name, image, sex, age, coach, schedule}));
+        console.log("DATA:", data);
         yield put(TeamsActions.createNewTeamSuccess({data}));
     } catch (error) {
         yield put(TeamsActions.createNewTeamFailure({error}));

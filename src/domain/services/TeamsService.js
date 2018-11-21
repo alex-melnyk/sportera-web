@@ -7,8 +7,8 @@ class TeamsService {
         return this.teamsGateway.getTeamsList();
     }
 
-    addNewTeam() {
-        return this.teamsGateway.addNewTeam();
+    addNewTeam({name, image, sex, age, coach, schedule}) {
+        return this.teamsGateway.addNewTeam({name, image, sex, age, coach, schedule});
     }
 }
 
