@@ -27,7 +27,7 @@ class TeamsGateway {
 
         let formData = new FormData();    //formdata object
 
-        formData.append('program[photo]', photo);
+        formData.append('program[photo]', photo, 'NewFileName.jpg');
         formData.append('program[name]', name);
         // formData.append('program[field_name]', name);
         // formData.append('program[field_id]', name);

@@ -26,10 +26,12 @@ class CreateTeamModal extends Component {
         this.addNewTeamHandler = this.addNewTeamHandler.bind(this);
         this.nameInputHandler = this.nameInputHandler.bind(this);
         this.genderOptionsHandler = this.genderOptionsHandler.bind(this);
+        this.handleFileUpload = this.handleFileUpload.bind(this);
 
         this.state = {
             teamName: null,
-            gender: 'female'
+            gender: 'female',
+            file: null,
         }
     }
 
@@ -43,12 +45,17 @@ class CreateTeamModal extends Component {
         });
     }
 
+    handleFileUpload(event) {
+        console.log("IMAGE: ",event.target.files[0]);
+        this.setState({file: event.target.files[0]});
+    }
+
     addNewTeamHandler() {
         console.log("TeamName:", this.state.teamName);
         console.log("Gender 0-female 1-male:", this.state.gender);
         if (this.state.teamName !== null) {
             this.props.saga_createNewTeamRequest({
-                photo: null,
+                photo: this.state.file,
                 name: this.state.teamName,
                 genders: this.state.gender === 'female' ? 0 : 1,
                 age: {
@@ -89,7 +96,7 @@ class CreateTeamModal extends Component {
                     <div className="row">
 
                         <div className="col-md-6">
-                            <AddPhoto/>
+                            <AddPhoto onChange={this.handleFileUpload}/>
                         </div>
                         {/*col-md-6*/}
 
