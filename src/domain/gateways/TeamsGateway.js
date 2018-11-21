@@ -10,7 +10,6 @@ class TeamsGateway {
      */
     async getTeamsList() {
         const {data} = await this.restAdapter.get(APIPaths.TEAMS);
-
         return data;
     }
 }

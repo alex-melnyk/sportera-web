@@ -16,4 +16,15 @@ export default {
     chat__sidebar_label: 'Чат',
     crm__sidebar_label: 'CRM',
     settings__sidebar_label: 'Настройки',
+
+    //TEAM CARD
+    week_day: [
+        'Понеділок', 
+        'Вівторок', 
+        'Середа', 
+        'Четвер',
+        'П\'ятница',
+        'Субота', 
+        'Неділя'
+    ]
 };

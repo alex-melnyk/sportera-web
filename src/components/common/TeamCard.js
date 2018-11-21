@@ -53,7 +53,7 @@ class TeamCard extends Component {
                                     <div className="flex-column">
                                         {
                                             trainers.map((trainer) => (
-                                                <p>{trainer}</p>
+                                                <p key={trainer.id}>{trainer.fullName}</p>
                                             ))
                                         }
                                     </div>
@@ -72,9 +72,9 @@ class TeamCard extends Component {
                                         <div className="schedule">
                                             {
                                                 schedule.map((app) => (
-                                                    <div className="schedule-row">
+                                                    <div className="schedule-row" key={app.id}>
                                                         <span>{app.day}</span>
-                                                        <p>{app.from} - {app.till}</p>
+                                                        <p>{app.from} - {app.to}</p>
                                                     </div>
                                                 ))
                                             }
@@ -100,11 +100,13 @@ TeamCard.propTypes = {
     name: PropTypes.string,
     size: PropTypes.number,
     photo: PropTypes.string,
-    trainers: PropTypes.arrayOf(PropTypes.string),
+    trainers: PropTypes.arrayOf(PropTypes.shape({
+        fullName: PropTypes.string
+    })),
     schedule: PropTypes.arrayOf(PropTypes.shape({
         day: PropTypes.string,
         from: PropTypes.string,
-        till: PropTypes.string,
+        to: PropTypes.string,
     })),
 
 };
