@@ -164,18 +164,13 @@ class TeamsScreen extends Component {
     }
 };
 
-const mapStateToProps = state => {
-    return {
+const ConnectTeam = connect(
+    (state) => ({
         teams: state.app.teams
-    }
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
+    }), 
+    (dispatch) => ({
         onInitTeams: () => dispatch(actions.retrieveTeamsList())
-    }
-};
-
-const ConnectTeam = connect(mapStateToProps, mapDispatchToProps)(TeamsScreen);
+    })
+)(TeamsScreen);
 
 export {ConnectTeam as TeamsScreen};
