@@ -13,6 +13,12 @@ class TeamsGateway {
 
         return data;
     }
+
+    async addNewTeam() {
+        const {data} = await this.restAdapter.get(APIPaths.ADD_NEW_TEAM);
+        
+        return data;
+    }
 }
 
 export {TeamsGateway};

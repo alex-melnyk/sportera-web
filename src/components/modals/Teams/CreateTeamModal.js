@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import { connect } from "react-redux";
+import {createNewTeam} from '../../../store/actions'
 
 import {
     AddPhoto,
@@ -13,15 +15,27 @@ import {
     TimeSchedule
 } from '../../common';
 
+
 import i18n from '../../../i18n';
 
 import '../../common/close.scss';
 
 class CreateTeamModal extends Component {
+
+constructor(props){
+    super(props);
+    this.addNewTeamHandler = this.addNewTeamHandler.bind(this);
+}
+
+    addNewTeamHandler(event){
+        console.log("addNewTeamHandler")
+        this.props.saga_createNewTeamRequest('one', 'two', '3','4', '5','6')
+    }
+
     renderActionButtons = () => (
         <Button
             text={i18n.t('common_cta_save')}
-            onClick={this.props.onClose}
+            onClick={this.addNewTeamHandler}
         />
     );
 
@@ -215,4 +229,28 @@ CreateTeamModal.propTypes = {
     onClose: PropTypes.func,
 };
 
-export {CreateTeamModal};
+// const mapStateToProps = state => {
+//     return {
+//       loadinUser: state.log.loading,
+//       edm: state.log.emailDontMatch,
+//       pdm: state.log.passwordDontMatch
+//     };
+//   };
+  
+  const mapActionsToProps = dispatch => {
+    return {        
+        saga_createNewTeamRequest: (name, image, sex, age, coach, schedule) => {
+        dispatch(createNewTeam(name, image, sex, age, coach, schedule));
+      }
+    };
+  };
+
+const CreateTeamModalContainer = connect((state) => ({
+    // State
+    // mapStateToProps
+}), 
+    // Actions
+    mapActionsToProps
+)(CreateTeamModal);
+
+export {CreateTeamModalContainer as CreateTeamModal};

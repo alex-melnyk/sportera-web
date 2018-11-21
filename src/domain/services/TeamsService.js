@@ -6,6 +6,10 @@ class TeamsService {
     getTeamsList() {
         return this.teamsGateway.getTeamsList();
     }
+
+    addNewTeam() {
+        return this.teamsGateway.addNewTeam();
+    }
 }
 
 export {TeamsService};

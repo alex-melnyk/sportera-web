@@ -15,8 +15,28 @@ function* retrieveTeamsList() {
     }
 }
 
+function* saga_addNewTeam(action) {
+    
+    console.log("[teamsSaga] action",action);
+    // const newTeam = {
+    //     name, image, sex, age, coach, schedule
+    // }
+    // console.log("[teamsSaga] newTeam",newTeam);
+
+    try {
+        const data = yield call(() => teamsService.addNewTeam());
+        yield put(TeamsActions.createNewTeamSuccess({data}));
+    } catch (error) {
+        yield put(TeamsActions.createNewTeamFailure({error}));
+    }
+}
+
+
+
+
 function* teamsListener() {
     yield takeLatest(Types.TEAMS_GET_LIST_REQUEST, retrieveTeamsList);
+    yield takeLatest(Types.TEAMS_ADD_NEW_REQUEST, saga_addNewTeam);
 
 
     yield takeLatest(Types.AUTH_SIGN_IN_SUCCESS, retrieveTeamsList);
