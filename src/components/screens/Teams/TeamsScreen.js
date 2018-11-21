@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import {Button, PageToolbar, TeamCard} from "../../common";
 import {CreateTeamModal} from "../../modals";
 
-import axios from 'axios';
 import i18n from '../../../i18n';
 import * as actions from '../../../store/actions/index';
 
