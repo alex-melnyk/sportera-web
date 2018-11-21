@@ -81,7 +81,7 @@ class TeamsScreen extends Component {
             // get data for working time
             const workingData = [];
             element.working_times.map(el => {
-                const weekday = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+                const weekday = i18n.t('week_day', { returnObjects: true });
                 return workingData.push({
                     id: el.id,
                     day: weekday[el.day],

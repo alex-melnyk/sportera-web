@@ -15,4 +15,15 @@ export default {
     chat__sidebar_label: 'Chat',
     crm__sidebar_label: 'CRM',
     settings__sidebar_label: 'Settings',
+
+    // TEAM CARD
+    week_day: [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday'
+    ]
 };
