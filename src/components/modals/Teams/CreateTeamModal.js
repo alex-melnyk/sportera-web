@@ -15,7 +15,6 @@ import {
     TimeSchedule
 } from '../../common';
 
-
 import i18n from '../../../i18n';
 
 import '../../common/close.scss';
@@ -41,7 +40,7 @@ class CreateTeamModal extends Component {
     renderActionButtons = () => (
         <Button
             text={i18n.t('common_cta_save')}
-            onClick={this.addNewTeamHandler}
+            onClick={this.props.onClose}
         />
     );
 
