@@ -7,8 +7,24 @@ class TeamsService {
         return this.teamsGateway.getTeamsList();
     }
 
-    addNewTeam({name, image, sex, age, coach, schedule}) {
-        return this.teamsGateway.addNewTeam({name, image, sex, age, coach, schedule});
+    addNewTeam({
+                   photo,
+                   name,
+                   genders,
+                   age,
+                   employees,
+                   season,
+                   workingTimes,
+               }) {
+        return this.teamsGateway.addNewTeam({
+            photo,
+            name,
+            genders,
+            age,
+            employees,
+            season,
+            workingTimes,
+        });
     }
 }
 

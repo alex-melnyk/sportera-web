@@ -24,17 +24,45 @@ class CreateTeamModal extends Component {
     constructor(props) {
         super(props);
         this.addNewTeamHandler = this.addNewTeamHandler.bind(this);
+        this.nameInputHandler = this.nameInputHandler.bind(this);
+        this.genderOptionsHandler = this.genderOptionsHandler.bind(this);
+
+        this.state = {
+            teamName: null,
+            gender: 'female'
+        }
+    }
+
+    nameInputHandler(event) {
+        this.setState({teamName: event.target.value});
+    }
+
+    genderOptionsHandler(event) {
+        this.setState({
+            gender: event.target.value
+        });
     }
 
     addNewTeamHandler() {
-        this.props.saga_createNewTeamRequest({
-            name: "nameFromInput",
-            image: "imageFromInput",
-            sex: "imageFromInput",
-            age: "imageFromInput",
-            coach: "imageFromInput",
-            schedule: "imageFromInput"
-        })
+        console.log("TeamName:", this.state.teamName);
+        console.log("Gender 0-female 1-male:", this.state.gender);
+        if (this.state.teamName !== null) {
+            this.props.saga_createNewTeamRequest({
+                photo: null,
+                name: this.state.teamName,
+                genders: this.state.gender === 'female' ? 0 : 1,
+                age: {
+                    from: 12,
+                    to: 18
+                },
+                employees: 1,
+                season: {
+                    start: new Date(2018, 11, 2),
+                    end: new Date(2018, 11, 3)
+                },
+                workingTimes: [{day: 12}]
+            })
+        }
     }
 
     renderActionButtons = () => (
@@ -71,7 +99,7 @@ class CreateTeamModal extends Component {
                                     <Label/>
                                 </div>
                                 <div className="d-block">
-                                    <InputText/>
+                                    <InputText onChange={event => this.nameInputHandler(event)}/>
                                 </div>
                             </div>
                             {/*form-group*/}
@@ -83,7 +111,8 @@ class CreateTeamModal extends Component {
                                     </label>
                                 </div>
                                 <div className="d-block">
-                                    <InputRadio/>
+                                    <InputRadio genderSelectedOption={this.state.gender}
+                                                genderOptionsHandler={this.genderOptionsHandler}/>
                                 </div>
                             </div>
                             {/*form-group*/}

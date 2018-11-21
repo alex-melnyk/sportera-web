@@ -15,24 +15,37 @@ function* retrieveTeamsList() {
     }
 }
 
-function* saga_addNewTeam({name, image, sex, age, coach, schedule}) {
-    
-    console.log("[teamsSaga] team",{name, image, sex, age, coach, schedule});
-    // const newTeam = {
-    //     name, image, sex, age, coach, schedule
-    // }
-    // console.log("[teamsSaga] newTeam",newTeam);
+/**
+ *
+ * @param photo
+ * @param name
+ * @param genders
+ * @param age
+ * @param employees
+ * @param season
+ * @param workingTimes
+ * @returns {IterableIterator<*>}
+ */
+function* saga_addNewTeam({
+                              photo, name, genders,
+                              age, employees, season,
+                              workingTimes,
+                          }) {
+
 
     try {
-        const data = yield call(() => teamsService.addNewTeam({name}));
+        const data = yield call(() => teamsService.addNewTeam({
+            photo, name, genders,
+            age, employees, season,
+            workingTimes,
+        }));
         console.log("DATA:", data);
         yield put(TeamsActions.createNewTeamSuccess({data}));
     } catch (error) {
+        console.log("Error:", error.message);
         yield put(TeamsActions.createNewTeamFailure({error}));
     }
 }
-
-
 
 
 function* teamsListener() {
