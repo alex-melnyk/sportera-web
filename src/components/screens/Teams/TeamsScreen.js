@@ -5,9 +5,7 @@ import {Button, PageToolbar, TeamCard} from "../../common";
 import {CreateTeamModal} from "../../modals";
 
 import i18n from '../../../i18n';
-import * as actions from '../../../store/actions/index';
-
-import TeamPhoto from '../../../assets/img/team/1.jpg';
+import * as actions from '../../../store/actions';
 
 const LOOK = {
     CARD: 'CARD',
@@ -21,7 +19,7 @@ class TeamsScreen extends Component {
     };
 
     componentDidMount() {
-        this.props.onInitTeams();
+        this.props.retrieveTeamsList();
     }
 
     setLAFPressed = (look) => {
@@ -85,6 +83,7 @@ class TeamsScreen extends Component {
             teamsData.push({
                 id: element.id,
                 name: element.name,
+                photo: element.photo,
                 coachData,
                 workingData
             });
@@ -98,7 +97,7 @@ class TeamsScreen extends Component {
                             teamsData.map((el) => (
                                 <TeamCard
                                     key={el.id}
-                                    photo={TeamPhoto}
+                                    photo={el.photo}
                                     name={el.name}
                                     size={22}
                                     trainers={el.coachData}
@@ -115,7 +114,7 @@ class TeamsScreen extends Component {
                             teamsData.map((el) => (
                                 <TeamCard
                                     key={el.id}
-                                    photo={TeamPhoto}
+                                    photo={el.photo}
                                     name={el.name}
                                     size={22}
                                     trainers={el.coachData}
@@ -165,12 +164,12 @@ class TeamsScreen extends Component {
 };
 
 const ConnectTeam = connect(
-    (state) => ({
-        teams: state.app.teams
-    }), 
-    (dispatch) => ({
-        onInitTeams: () => dispatch(actions.retrieveTeamsList())
-    })
+    ({app}) => ({
+        teams: app.teams
+    }),
+    {
+        retrieveTeamsList: actions.retrieveTeamsList
+    }
 )(TeamsScreen);
 
 export {ConnectTeam as TeamsScreen};
