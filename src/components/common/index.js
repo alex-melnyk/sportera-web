@@ -14,3 +14,4 @@ export * from './TeamCard';
 export * from './Textarea';
 export * from './TextLink';
 export * from './TimeSchedule';
+export * from './Table';

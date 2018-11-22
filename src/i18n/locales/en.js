@@ -25,5 +25,15 @@ export default {
         'Friday',
         'Saturday',
         'Sunday'
+    ],
+
+    //PLAYERS TABLE
+    players_table: [
+        'Player',
+        'Date of birth',
+        'Sex',
+        'Team',
+        'Registration Date',
+        'In the club'
     ]
 };
