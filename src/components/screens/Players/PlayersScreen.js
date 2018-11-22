@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 // import {connect} from 'react-redux';
 
@@ -10,6 +11,11 @@ import i18n from '../../../i18n';
 class PlayersScreen extends Component {
 
     componentDidMount() {
+        axios.get('https://private-anon-3b6d57b71e-sporteratest.apiary-mock.com/api/players?program_id=&status=&name=')
+        .then(res => {
+            console.log(res.data)
+        })
+        .catch(error=> console.log(error))
     }
 
     renderPlayers = () => {
