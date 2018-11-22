@@ -84,6 +84,7 @@ class TeamsScreen extends Component {
                 id: element.id,
                 name: element.name,
                 photo: element.photo,
+                size: element.clients_count,
                 coachData,
                 workingData
             });
@@ -99,7 +100,7 @@ class TeamsScreen extends Component {
                                     key={el.id}
                                     photo={el.photo}
                                     name={el.name}
-                                    size={22}
+                                    size={el.size}
                                     trainers={el.coachData}
                                     schedule={el.workingData}
                                 />
@@ -116,7 +117,7 @@ class TeamsScreen extends Component {
                                     key={el.id}
                                     photo={el.photo}
                                     name={el.name}
-                                    size={22}
+                                    size={el.size}
                                     trainers={el.coachData}
                                     schedule={el.workingData}
                                 />
