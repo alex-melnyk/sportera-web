@@ -21,38 +21,24 @@ import '../../common/close.scss';
 
 class CreateTeamModal extends Component {
 
-    constructor(props) {
-        super(props);
-        this.addNewTeamHandler = this.addNewTeamHandler.bind(this);
-        this.nameInputHandler = this.nameInputHandler.bind(this);
-        this.genderOptionsHandler = this.genderOptionsHandler.bind(this);
-        this.handleFileUpload = this.handleFileUpload.bind(this);
+    state = {
+        teamName: null,
+        gender: 'female',
+        file: null,
+        ageFrom: null,
+        ageTo: null,
+        employees: null,
+        seasonStart: null,
+        seasonEnd: null,
+    };
 
-        this.state = {
-            teamName: null,
-            gender: 'female',
-            file: null,
-        }
-    }
-
-    nameInputHandler(event) {
-        this.setState({teamName: event.target.value});
-    }
-
-    genderOptionsHandler(event) {
+    inputChanged = (key, value) => {
         this.setState({
-            gender: event.target.value
-        });
-    }
+            [key]: value
+        })
+    };
 
-    handleFileUpload(event) {
-        console.log("IMAGE: ",event.target.files[0]);
-        this.setState({file: event.target.files[0]});
-    }
-
-    addNewTeamHandler() {
-        console.log("TeamName:", this.state.teamName);
-        console.log("Gender 0-female 1-male:", this.state.gender);
+    addNewTeamHandler = () => {
         if (this.state.teamName !== null) {
             this.props.saga_createNewTeamRequest({
                 photo: this.state.file,
@@ -70,7 +56,7 @@ class CreateTeamModal extends Component {
                 workingTimes: [{day: 12}]
             })
         }
-    }
+    };
 
     renderActionButtons = () => (
         <Button
@@ -78,6 +64,7 @@ class CreateTeamModal extends Component {
             onClick={this.addNewTeamHandler}
         />
     );
+
 
     render() {
         const {
@@ -96,7 +83,7 @@ class CreateTeamModal extends Component {
                     <div className="row">
 
                         <div className="col-md-6">
-                            <AddPhoto onChange={this.handleFileUpload}/>
+                            <AddPhoto onChange={(event) => this.inputChanged('file', event.target.files[0])}/>
                         </div>
                         {/*col-md-6*/}
 
@@ -106,7 +93,8 @@ class CreateTeamModal extends Component {
                                     <Label/>
                                 </div>
                                 <div className="d-block">
-                                    <InputText onChange={event => this.nameInputHandler(event)}/>
+                                    <InputText
+                                        onChange={event => this.inputChanged('teamName', event.target.value)}/>
                                 </div>
                             </div>
                             {/*form-group*/}
@@ -119,7 +107,7 @@ class CreateTeamModal extends Component {
                                 </div>
                                 <div className="d-block">
                                     <InputRadio genderSelectedOption={this.state.gender}
-                                                genderOptionsHandler={this.genderOptionsHandler}/>
+                                                genderOptionsHandler={(event) => this.inputChanged('gender', event.target.value)}/>
                                 </div>
                             </div>
                             {/*form-group*/}
